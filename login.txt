@@ -36,12 +36,12 @@ button:hover {
 }
 
 .imgcontainer {
-  text-align: center;
+  text-align: left;
   margin: 24px 0 12px 0;
 }
 
 img.avatar {
-  width: 40%;
+  width: 20%;
   border-radius: 50%;
 }
 
@@ -68,11 +68,11 @@ span.psw {
 </head>
 <body>
 
-<h2>Login Form</h2>
+<h2>Flip Book Login</h2>
 
 <form action="/action_page.php" method="post">
   <div class="imgcontainer">
-    <img src="wayne_state_university_logo.jpg" alt="Avatar" class="avatar">
+    <img src="fblogo.jpg" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">

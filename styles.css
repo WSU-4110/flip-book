@@ -1,0 +1,55 @@
+.navigation {
+	list-style-type: none;
+
+}
+
+.navigation li{
+	display: inline;
+	padding-right: 50px;
+	font-family: Cambria;
+	font-size: 18px;
+}
+
+#search_bar {
+	margin-right: 50px;
+}
+
+#icons {
+	float: right;
+	margin-right: 100px;
+}
+
+.fa-shopping-cart {
+	margin-left: 20px;
+}
+
+a:link, a:visited {
+	color: black;
+}
+
+aside {
+	width: 200px;
+	height: 400px;
+	margin-left: 20px;
+	border: 1px solid black;
+	float: left;
+}
+
+main {
+	margin-left: 250px;
+	width: 1150px;
+	height: 600px;
+	border: 1px solid black;
+
+}
+
+aside p {
+	font-family: Cambria;
+}
+
+#aside_title {
+	text-align: center;
+	text-decoration: underline;
+}
+
+

@@ -1,0 +1,117 @@
+.navigation {
+	list-style-type: none;
+  background-color: #d3d3d3;
+
+}
+
+.navigation li{
+	display: inline;
+	padding-right: 140px;
+	font-family: Cambria;
+	font-size: 18px;
+}
+
+#search_bar {
+	margin-right: 405px;
+	font-size: 20px;
+  height: 50px;
+}
+
+#about {
+	margin-left: 300px;
+}
+
+#contact {
+	margin-right: 650px;
+}
+
+#icons {
+	float: right;
+	margin-right: 100px;
+}
+
+.fa-shopping-cart {
+	margin-left: 30px;
+}
+
+a:link, a:visited {
+	color: black;
+}
+
+main {
+	margin-left: 250px;
+	width: 1150px;
+	height: 600px;
+	border: none;
+
+}
+
+aside p {
+	font-family: Cambria;
+}
+
+#aside_title {
+	text-align: center;
+	text-decoration: underline;
+}
+
+form {
+  max-width: 550px;
+  margin: 8px auto;
+  margin-right: 350px;
+  padding: 8px 15px;
+  background: #d3d3d3;
+  border-radius: 8px;
+  line-height: 2;
+  font-family: Cambria;
+}
+
+fieldset {
+    margin-bottom: 30px;
+    border: none;
+}
+
+
+
+legend {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.section {
+  background-color: #5fcf80;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-right: 4px;
+  line-height: 30px;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+  border-radius: 100%;
+}
+
+.signup h1 {
+  margin-left: 10cm;
+  font-family: Cambria;
+}
+
+button[type="submit"] {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+.fa fa-plus {
+  margin-bottom: 3cm;
+}

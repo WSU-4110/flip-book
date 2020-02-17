@@ -25,8 +25,14 @@ nav {
 }
 
 #search_bar {
-	margin-right: 430px;
+	margin-right: 0px;
 	font-size: 20px;
+}
+
+#search {
+	background-color: white;
+	height: 10px;
+	width: 50px;
 }
 
 #about {
@@ -40,6 +46,10 @@ nav {
 #icons {
 	float: right;
 	margin-right: 100px;
+}
+
+.fa-search {
+	margin-right: 400px;
 }
 
 .fa-shopping-cart {

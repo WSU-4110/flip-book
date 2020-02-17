@@ -107,6 +107,7 @@ aside p {
 
 #main_checkout_frame {
 	margin-left: 50px;
+	margin-right: 500px;
 	height: 600px;
 	border: 1px solid black;
 
@@ -138,6 +139,20 @@ aside p {
 #remove_book{
 	float:right;
 }
+
+#total_items {
+	width: 100%;
+	border-spacing: 15px;
+}
+
+#total_items th, td {
+	padding: 5px;
+}
+
+#total_items th {
+	text-align: left;
+}
+
 
 footer {
 	background-image: linear-gradient(lightgray, #E8E8E8);

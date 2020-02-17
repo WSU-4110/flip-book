@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Flip Book</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<body>
+
+	<nav>
+		<ul class="navigation">
+			<p id="icons">
+				<input id="search_bar" type="text" placeholder="Search by title, author, subject, or ISBN" size="70px">
+				<a href=""><i class="fa fa-search" style="font-size:26px"></i></a>
+				<a href=""><i class="fa fa-plus" style="font-size:36px"></i></a>
+				<a href=""><i class="fa fa-user-circle-o" style="font-size:36px"></i></a>
+				<a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
+			</p>
+			<li href="main.html"><img src="images/flipbook_logo.png" width="150px" height="100px"><li>
+			<span id="menu">
+				<li><a id="about" href="About.html">About</a></li>
+				<li><a id="contact" href="ContactUs.html">Contact Us</a></li>
+			</span>
+		</ul>
+	</nav>
+
+	
+
+	<aside id="aside_checkout">
+		<p id="aside_title">Cart Total</p>
+
+	</aside>
+
+	<main id="main_checkout_frame">
+		<div class="cart_item_frame">
+			<div class="column">
+				<a><img id="book_image" src="images/sampleTextBook.jpg"></a>
+			</div>
+			<div class="column">
+				<p>Title: Coding For Dummies</p>
+				<p>Author: Nikhil Abraham</p>
+				<p>ISBN: 978-1119293323</p>
+			</div>
+			<div class="column">
+				<p id="book_price" href="" style="font-size: 36px">$10.00</p>
+			</div>
+			<div class="column">
+				<div class="buttons">
+					<p id="contact_seller" href=""><button style="font-size: 18px">Contact Seller</button></p>
+					<p id="remove_book" href=""><button style="font-size: 18px">Remove Book</button></p>
+				</div>
+			</div>
+		</div> 
+
+	</main>
+
+	<footer>
+		<br>
+		<p>	&copy; 2020, Flip Book, Inc.</p>
+	</footer>
+
+</body>
+</html>

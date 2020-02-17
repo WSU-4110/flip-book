@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flip Book</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	<nav>
+		<ul class="navigation">
+			<p id="icons">
+				<input id="search_bar" type="text" placeholder="Search by title, author, subject, or ISBN" size="70px">
+				<a href=""><i class="fa fa-user-circle-o" style="font-size:36px"></i></a>
+				<a href=""><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
+			</p>
+			<li href="main.html"><img src="images/Flip_Book_Logo.png" width="150px" height="100px"><li>
+			<span id="menu">
+				<a href="About.html">About&nbsp;</a>
+				<a href= "ContactUs.html">&nbsp;Contact Us<a>
+				<li id="list_book" href="list.html"><button style="font-size:18px">List a book <i class="fa fa-plus"></i></button></li>
+			</span>
+		</ul>
+	</nav>
+
+	<aside>
+		<p id="aside_title">Categories</p>
+	</aside>
+
+	<main>
+		<h2>Have any questions? We'd love to get in touch with you! Here is how you can contact us.</h2>
+		
+		<p>All fields marked with an asterisk must be filled to successfully submit the form.</p>
+		
+	<form method = "post" action = "Thankyou.html">
+		<fieldset><legend><b>Contact Form</b></legend>
+		<label for = "myFName"> *First Name: </label>
+		<input type = "text" name= "myFName" required = "required"> <br>
+		<label for = "myLName"> *Last Name: </label>
+		<input type = "text" name = "myLName" required = "required"> <br>
+		<label for = "myEmail"> *E-mail: </label>
+		<input type = "email" name = "myEmail" required = "required"> <br>	
+		<label for = "myComment"> *What can we help you with?: </label>
+		<textarea type = "text" cols = "20" rows = "2" name = "myComment" required></textarea>
+		<input type = "submit" value = "Submit" id = "mySubmit">
+		</fieldset>
+	</form>
+	</main>
+
+	<footer>
+		<p>	&copy; 2020, Flip Book, Inc.</p>
+	</footer>
+
+
+
+</body>
+</html>

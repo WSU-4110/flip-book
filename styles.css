@@ -100,14 +100,13 @@ aside p {
 #aside_checkout {
 	float: right;
 	margin-right: 50px;
-	width: 300px;
+	width: 400px;
 	height: 600px;
 	border: 1px solid black;
 }
 
 #main_checkout_frame {
 	margin-left: 50px;
-	margin-right: 400px;
 	height: 600px;
 	border: 1px solid black;
 

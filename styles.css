@@ -1,5 +1,19 @@
+body, html {
+	margin: 0;
+	padding: 0;
+	background-color: white;
+}
+nav {
+	background-image: linear-gradient(lightgray, #E8E8E8);
+	height: 135px;
+	border-bottom: 0.5px solid gray;
+	margin-bottom: 20px;
+	/*position: fixed;*/
+	top: -50px;
+}
 .navigation {
 	list-style-type: none;
+	margin: 0px;
 
 }
 
@@ -7,20 +21,26 @@
 	display: inline;
 	padding-right: 50px;
 	font-family: Cambria;
-	font-size: 18px;
-}
-
-#search_bar {
-	margin-right: 305px;
 	font-size: 20px;
 }
 
+#search_bar {
+	margin-right: 0px;
+	font-size: 20px;
+}
+
+#search {
+	background-color: white;
+	height: 10px;
+	width: 50px;
+}
+
 #about {
-	margin-left: 300px;
+	margin-left: 215px;
 }
 
 #contact {
-	margin-right: 600px;
+	margin-right: 780px;
 }
 
 #icons {
@@ -28,19 +48,35 @@
 	margin-right: 100px;
 }
 
+.fa-search {
+	margin-right: 400px;
+}
+
 .fa-shopping-cart {
 	margin-left: 30px;
 }
 
+.fa-user-circle-o {
+	margin-left: 30px;
+}
+
+#list_book_button {
+	border-radius: 4px;
+	background-color: green;
+	color: gold;
+	font-weight: bold;
+}
+
 a:link, a:visited {
 	color: black;
+	text-decoration: none;
 }
 
 aside {
 	width: 200px;
 	height: 400px;
 	margin-left: 20px;
-	border: 1px solid black;
+	border: 0.5px solid black;
 	float: left;
 }
 
@@ -48,20 +84,11 @@ main {
 	margin-left: 250px;
 	width: 1150px;
 	height: 600px;
-	border: 1px solid black;
+	border: 0.5px solid black;
 
 }
 
 aside p {
-	font-family: Cambria;
-}
-
-h2 {
-	font-family: Cambria;
-}
-
-p{	
-	
 	font-family: Cambria;
 }
 
@@ -70,4 +97,96 @@ p{
 	text-decoration: underline;
 }
 
+#aside_checkout {
+	float: right;
+	margin-right: 50px;
+	width: 400px;
+	height: 600px;
+	border: 1px solid black;
+}
 
+#main_checkout_frame {
+	margin-left: 50px;
+	height: 600px;
+	border: 1px solid black;
+
+}
+
+.cart_item_frame {
+	margin: 50px;
+	height: 150px;
+	border: 1px solid black;
+}
+
+#book_image {
+	height: 130px;
+	padding-left: 10px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  height: 100%;
+  padding-top: 10px;
+}
+
+.buttons{
+	float:right;
+	padding-right: 10px;
+}
+
+input[type=text], textarea {
+  width: 50%; /* Full width */
+  padding: 10px; /* Some padding */ 
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 20px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 1px; /* Add a top margin */
+  margin-bottom: 10px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+input[type=email], email {
+  width: 50%; /* Full width */
+  padding: 10px; /* Some padding */ 
+  border: 1px solid #ccc; 
+  border-radius: 20px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 1px; /* Add a top margin */
+  margin-bottom: 10px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Submit button*/
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a yellow color */
+input[type=submit]:hover {
+  background-color: #FFD700;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 30px;
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+#remove_book{
+	float:right;
+}
+
+footer {
+	background-image: linear-gradient(lightgray, #E8E8E8);
+	margin-top: 20px;
+	margin-bottom: 0px;
+	bottom: 0px;
+	min-height: 7vh
+}

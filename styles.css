@@ -3,6 +3,24 @@ body, html {
 	padding: 0;
 	background-color: white;
 }
+
+#welcome {
+	text-align: center;
+	font-family: Cambria;
+	font-size: 30px;
+}
+
+.welcome_text {
+	text-align: center;
+	font-family: Cambria;
+	font-size: 18px;
+}
+
+#index_buttons {
+	text-align: center;
+	margin-top: 50px;
+}
+
 nav {
 	background-image: linear-gradient(lightgray, #E8E8E8);
 

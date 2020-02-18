@@ -5,10 +5,9 @@ body, html {
 }
 nav {
 	background-image: linear-gradient(lightgray, #E8E8E8);
-	height: 135px;
+
 	border-bottom: 0.5px solid gray;
 	margin-bottom: 20px;
-	/*position: fixed;*/
 	top: -50px;
 }
 .navigation {
@@ -24,15 +23,32 @@ nav {
 	font-size: 20px;
 }
 
+a:link, a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#logo {
+	float: left;
+	display: inline;
+}
+
+#searchbox {
+	float: left;
+	margin-top: 20px;
+	margin-left: 60px;
+}
+
 #search_bar {
 	margin-right: 0px;
 	font-size: 20px;
+	border-radius: 20px;
 }
 
-#search {
-	background-color: white;
-	height: 10px;
-	width: 50px;
+#menu {
+	position: relative;
+	left: -9.34%;
+	margin-top: 30px;
 }
 
 #about {
@@ -49,7 +65,7 @@ nav {
 }
 
 .fa-search {
-	margin-right: 400px;
+	margin-right: 100px;
 }
 
 .fa-shopping-cart {
@@ -65,11 +81,6 @@ nav {
 	background-color: green;
 	color: gold;
 	font-weight: bold;
-}
-
-a:link, a:visited {
-	color: black;
-	text-decoration: none;
 }
 
 aside {
@@ -97,17 +108,29 @@ aside p {
 	text-decoration: underline;
 }
 
+footer {
+	background-image: linear-gradient(lightgray, #E8E8E8);
+	margin-top: 43px;
+	min-height: 7vh
+}
+
+#copyright {
+	margin-left: 5%;
+}
+
+
+/**Checkout page**/
 #aside_checkout {
 	float: right;
 	margin-right: 50px;
-	width: 300px;
+	width: 400px;
 	height: 600px;
 	border: 1px solid black;
 }
 
 #main_checkout_frame {
 	margin-left: 50px;
-	margin-right: 400px;
+	margin-right: 500px;
 	height: 600px;
 	border: 1px solid black;
 
@@ -140,11 +163,15 @@ aside p {
 	float:right;
 }
 
-footer {
-	background-image: linear-gradient(lightgray, #E8E8E8);
-	margin-top: 20px;
-	margin-bottom: 0px;
-	bottom: 0px;
-	min-height: 7vh
+#total_items {
+	width: 100%;
+	border-spacing: 15px;
 }
 
+#total_items th, td {
+	padding: 5px;
+}
+
+#total_items th {
+	text-align: left;
+}

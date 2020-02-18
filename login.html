@@ -1,77 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sign In - Flip Book</title>
-	<meta name="viewport" content="width=device-width, intial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="styles_nitisha.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles_nitisha.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-
-	<!----------------------->
-	<!---Navigation/header--->
-	<!----------------------->
-	<nav>
-		<ul class="navigation">
-			<!---Flip Book Logo--->
-			<li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
-
-
-			<!---Menu items--->
-			<div id="menu">
-				<br>
-				<br>
-				<li><a id="about" href="About.html">About</a></li>
-				<li><a id="contact" href="ContactUs.html">Contact Us</a></li>
-			</div>
-		</ul>
-	</nav>
+  <!----------------------->
+  <!---Navigation/header--->
+  <!----------------------->
+  <nav>
+    <ul class="navigation">
+      <!---Flip Book Logo--->
+      <li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
 
 
-
-	<!---------------------->
-	<!----Main page area---->
-	<!---------------------->
-	<main>
-		<p>
-			<div class="signup">
-	      <h1>Sign in to your Flip Book account!</h1>
-
-	      <form>
-
-	        <fieldset>
-	      
-	          <label id="email"><b>Email Address: </b></label>
-	          <input type="email" name="email" required> <br>
-
-	          <label id="password1"><b>Password: </b></label>
-	          <input type="password" name="password1" required> <br>
-
-	        </fieldset>
-
-	        <button type="submit">Sign In</button>
-
-	      </form>
-	      </div>
-
-				<div class= "loginLink">
-				<p> <a href="signUpPage.html">Don't have an account? <u>Sign Up!</u></a> </p>
-				<span class="psw">Did you forget your <a href="#"><u>password?</u></a></span>
-				</div>
-
-		</p>
-	</main>
+      <!---Menu items--->
+      <div id="menu">
+        <br>
+        <br>
+        <li><a id="about" href="About.html"></a></li>
+        <li><a id="contact" href="ContactUs.html"></a></li>
+      </div>
+    </ul>
+  </nav>
 
 
-	<!---------------------->
-	<!--------Footer-------->
-	<!---------------------->
-	<footer>
-		<br>
-		<p id="copyright">&copy; 2020, Flip Book, Inc.</p>
-	</footer>
 
+  <main>
+      <p>
+        <div class="signup">
+          <h1 id="flip_book_login">Flip Book Login</h1>
 
+          <form action="validation.php" method="post">
+
+            <fieldset>
+          
+              <label id="email"><b>Email Address: </b></label>
+              <input type="email" name="email" required> <br>
+
+              <label id="password1"><b>Password: </b></label>
+              <input type="password" name="password" required> <br>
+
+            </fieldset>
+
+            <button type="submit">Sign In</button>
+
+          </form>
+
+          <center><div class= "loginLink">
+            <p> <a href="signUpPage.html">Don't have an account? <u>Sign Up!</u></a> </p>
+            <span class="psw">Did you forget your <a href="#"><u>password?</u></a></span>
+          </div></center>
+        </div>
+      </p>
+  </main>
 
 </body>
 </html>

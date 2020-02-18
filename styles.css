@@ -186,14 +186,14 @@ footer {
 	border-spacing: 15px;
 }
 
-#total_items th, td {
+#total_items td {
 	padding: 5px;
-<<<<<<< HEAD
-=======
+
 }
 
 #total_items th {
 	text-align: left;
+	padding: 5px;
 }
 
 
@@ -208,7 +208,7 @@ input[type=text], textarea {
   resize: vertical
 }
 
-input[type=email], email {
+input[type=email] {
   width: 50%; 
   padding: 10px; 
   border: 1px solid #ccc; 
@@ -246,7 +246,6 @@ footer {
 	margin-bottom: 0px;
 	bottom: 0px;
 	min-height: 7vh
->>>>>>> 85f0d89fb856e86a7abe1f1151e11357374bbdf8
 }
 
 #total_items th {

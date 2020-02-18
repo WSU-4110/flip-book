@@ -261,7 +261,3 @@ button[type="submit"] {
 button[type=submit]:hover {
   background-color: #FFD700;
 }
-
-.loginLink {
-	margin-left: 10.5cm;
-}

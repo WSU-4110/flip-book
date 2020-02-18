@@ -20,7 +20,7 @@
 				<a href=""><i class="fa fa-user-circle-o" style="font-size:36px"></i></a>
 				<a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
 			</p>
-			<li href="main.html"><img src="images/flipbook_logo.png" width="150px" height="100px"><li>
+			<li><a href="main.html"><img src="images/flipbook_logo.png" width="150px" height="100px"></a><li>
 			<span id="menu">
 				<li><a id="about" href="About.html">About</a></li>
 				<li><a id="contact" href="ContactUs.html">Contact Us</a></li>
@@ -28,22 +28,34 @@
 		</ul>
 	</nav>
 
-	
-
 	<aside id="aside_checkout">
 		<p id="aside_title">Cart Total</p>
+		<table id="total_items">
+			<tr>
+				<th>Books</th>
+				<th>Price</th>
+			</tr>
+			<tr>
+				<td>Coding for Dummies</td>
+				<td>$10.00</td>
+			</tr>
+			<tr>
+				<td><b>Grand Total:</b></td>
+				<td><b>$10.00</b></td>
+			</tr>
+		</table>
 
 	</aside>
 
-	<main id="main_checkout_frame">
+	<div id="main_checkout_frame">
 		<div class="cart_item_frame">
 			<div class="column">
 				<a><img id="book_image" src="images/sampleTextBook.jpg"></a>
 			</div>
 			<div class="column">
-				<p>Title: Coding For Dummies</p>
-				<p>Author: Nikhil Abraham</p>
-				<p>ISBN: 978-1119293323</p>
+				<p><b>Title:</b> Coding For Dummies</p>
+				<p><b>Author:</b> Nikhil Abraham</p>
+				<p><b>ISBN:</b> 978-1119293323</p>
 			</div>
 			<div class="column">
 				<p id="book_price" href="" style="font-size: 36px">$10.00</p>
@@ -55,8 +67,9 @@
 				</div>
 			</div>
 		</div> 
+	</div>
 
-	</main>
+
 
 	<footer>
 		<br>

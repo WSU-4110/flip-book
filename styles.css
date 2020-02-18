@@ -170,6 +170,22 @@ footer {
 
 #total_items th, td {
 	padding: 5px;
+<<<<<<< HEAD
+=======
+}
+
+#total_items th {
+	text-align: left;
+}
+
+
+footer {
+	background-image: linear-gradient(lightgray, #E8E8E8);
+	margin-top: 20px;
+	margin-bottom: 0px;
+	bottom: 0px;
+	min-height: 7vh
+>>>>>>> 85f0d89fb856e86a7abe1f1151e11357374bbdf8
 }
 
 #total_items th {

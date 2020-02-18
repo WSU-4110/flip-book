@@ -2,66 +2,78 @@
 <html>
 <head>
 	<title>Flip Book</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
+	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="styles_nitisha.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
+	<!----------------------->
+	<!---Navigation/header--->
+	<!----------------------->
 	<nav>
 		<ul class="navigation">
-			<p id="icons">
-				<input id="search_bar" type="text" placeholder="Search by title, author, subject, or ISBN" size="70px">
-				<a href=""><i class="fa fa-user-circle-o" style="font-size:36px"></i></a>
-				<a href=""><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
-			</p>
-			<li href="main.html"><img src="Flip_Book_Logo.png" width="150px" height="100px"><li>
-			<span id="menu">
-				<li id="about" href="About.html">About</li>
-				<li id="contact" href="ContactUs.html">Contact Us</li>
-				<li id="list_book" href="list.html"><button style="font-size:18px">List a book <i class="fa fa-plus"></i></button></li>
-			</span>
+			<!---Flip Book Logo--->
+			<li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
+
+
+			<!---Menu items--->
+			<div id="menu">
+				<br>
+				<br>
+				<li><a id="about" href="About.html">About</a></li>
+				<li><a id="contact" href="ContactUs.html">Contact Us</a></li>
+			</div>
 		</ul>
 	</nav>
 
+
+
+	<!---------------------->
+	<!----Main page area---->
+	<!---------------------->
 	<main>
-  <p>
-    <div class="signup">
-      <h1>Register for an account:</h1>
+		<p>
+			<div class="signup">
+	      <h1>Register for an account with Flip Book!</h1>
 
-      <form>
+	      <form>
 
-        <fieldset>
-          <legend><span class="section1"></span></legend>
-          <label id="firstName"><b>First Name: </b></label>
-          <input type="text" name="firstName" required> <br>
+	        <fieldset>
+	          <legend><span class="section1"></span></legend>
+	          <label id="firstName"><b>First Name: </b></label>
+	          <input type="text" name="firstName" required> <br>
 
-          <label id="lastName"><b>Last Name: </b></label>
-          <input type="text" name="lastName" required> <br>
+	          <label id="lastName"><b>Last Name: </b></label>
+	          <input type="text" name="lastName" required> <br>
 
-          <label id="phone"><b>Phone Number(Optional): </b></label>
-          <input type="number" name="phone"> <br>
+	          <label id="phone"><b>Phone Number(Optional): </b></label>
+	          <input type="number" name="phone"> <br>
 
-          <label id="email"><b>Email Address: </b></label>
-          <input type="text" name="email" required> <br>
+	          <label id="email"><b>Email Address: </b></label>
+	          <input type="text" name="email" required> <br>
 
-          <label id="password1"><b>Password: </b></label>
-          <input type="password" name="password1" required> <br>
+	          <label id="password1"><b>Password: </b></label>
+	          <input type="password" name="password1" required> <br>
 
-          <label id="password2"><b>Confirm Password: </b></label>
-          <input type="password" name="password2" required> <br>
-        </fieldset>
+	          <label id="password2"><b>Confirm Password: </b></label>
+	          <input type="password" name="password2" required> <br>
+	        </fieldset>
 
-        <button type="submit">Sign Up</button>
+	        <button type="submit">Sign Up</button>
 
-      </form>
-      </div>
-
-
-  </p>
+	      </form>
+	      </div>
+		</p>
 	</main>
 
+
+	<!---------------------->
+	<!--------Footer-------->
+	<!---------------------->
 	<footer>
-		<p>	&copy; 2020, Flip Book, Inc.</p>
+		<br>
+		<p id="copyright">&copy; 2020, Flip Book, Inc.</p>
 	</footer>
 
 

@@ -11,20 +11,39 @@
 
 <body>
 
+	<!----------------------->
+	<!---Navigation/header--->
+	<!----------------------->
 	<nav>
 		<ul class="navigation">
-			<p id="icons">
-				<input id="search_bar" type="text" placeholder="Search by title, author, subject, or ISBN" size="70px">
-				<a href=""><i class="fa fa-search" style="font-size:26px"></i></a>
-				<a href=""><i class="fa fa-plus" style="font-size:36px"></i></a>
-				<a href=""><i class="fa fa-user-circle-o" style="font-size:36px"></i></a>
-				<a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
-			</p>
-			<li><a href="main.html"><img src="images/flipbook_logo.png" width="150px" height="100px"></a><li>
-			<span id="menu">
+			<!---Flip Book Logo--->
+			<li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
+			
+			<!---Searchbar--->
+			<li>
+				<form id="searchbox" action="">
+					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+					<a href=""><i class="fa fa-search" style="font-size:26px"></i></a>
+				</form>
+			</li>
+			
+
+			<!---Icons--->
+			<li>
+				<p id="icons">
+					<a href="post.html"><i class="fa fa-plus" style="font-size:36px"></i></a>
+					<a href="profile.html"><i class="fa fa-user-circle-o" style="font-size:36px"></i></a>
+					<a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
+				</p>
+			</li>
+
+			<!---Menu items--->
+			<div id="menu">
+				<br>
+				<br>
 				<li><a id="about" href="About.html">About</a></li>
 				<li><a id="contact" href="ContactUs.html">Contact Us</a></li>
-			</span>
+			</div>
 		</ul>
 	</nav>
 

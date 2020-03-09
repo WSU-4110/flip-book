@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,22 +62,29 @@
 	<!--------Main---------->
 	<!---------------------->
 	<main>
-		<center><h2>Have any questions?</h2></center>
+		<center><h2>Post a textbook</h2></center>
 	
-		<form id="contact-form" method = "post" action = "Thankyou.html"> 
-			<p>All fields must be filled to successfully submit the form.</p>
+		<form id="post-form" method = "post" action = "post_book.php"> 
 			<strong>
-				<label for = "myFName"> First Name: </label>
-				<input id="contact-fname" type = "text" name= "myFName" required = "required"> <br>
-				<label for = "myLName"> Last Name: </label>
-				<input id="contact-lname" type = "text" name = "myLName" required = "required"> <br>
-				<label for = "myEmail"> E-mail: </label>
-				<input id="contact-email" type = "email" name = "myEmail" required = "required"> <br>	
-				<label for = "myComment"> What can we help you with?: </label>
-				<textarea id="textarea" type = "text" cols = "20" rows = "2" name = "myComment" required></textarea>
-				<br>
-				<br>
-				<input id="contact-submit" type = "submit" value = "Submit" id = "mySubmit">
+				<label>Textbook title: </label>
+				<input id="book-title" type = "text" name= "book-title" required = "required"> <br>
+				<label>Author: </label>
+				<input id="author" type = "text" name = "author" required = "required"> <br>
+				<label>ISBN: </label>
+				<input id="ISBN" type = "text" name = "ISBN" required = "required"> <br>
+				<label>Edition: </label>
+				<input id="edition" type = "text" name = "edition" required = "required"> <br>
+				<label>Subject: </label>
+				<input id="subject" type = "text" name = "subject" required = "required"> <br>
+				<label>Class number: </label>
+				<input id="class-num" type = "text" name = "class-num"> <br>
+				<label>Tags: </label>
+				<input id="tags" type = "text" name = "tags"> <br>
+				<label>Price: </label>
+				<input id="price" type = "text" name = "price"> <br>
+				<label for="img">Image of textbook cover:</label>
+				<input type="file" id="img" name="img" accept="image/*"> <br><br>
+				<input id="post-submit" type = "submit" value = "Post book" id = "mySubmit">
 			</strong>
 		</form>
 	</main>
@@ -85,6 +96,14 @@
 	<footer>
 		<p id="copyright">&copy; 2020, Flip Book, Inc.</p>
 	</footer>
+
+
+	<script>
+		function myFunction() {
+		  var x = document.getElementById("img");
+		  x.disabled = true;
+		}
+	</script>
 
 
 

@@ -1,120 +1,20 @@
-body, html {
-	margin: 0;
-	padding: 0;
-	background-color: white;
-}
-
-#welcome {
-	text-align: center;
-	font-family: Cambria;
-	font-size: 30px;
-}
-
-.welcome_text {
-	text-align: center;
-	font-family: Cambria;
-	font-size: 18px;
-}
-
-#index_buttons {
-	text-align: center;
-	margin-top: 50px;
-}
-
-nav {
-	background-image: linear-gradient(lightgray, #E8E8E8);
-
-	border-bottom: 0.5px solid gray;
-	margin-bottom: 20px;
-	top: -50px;
-}
-.navigation {
-	list-style-type: none;
-	margin: 0px;
-
-}
-
-.navigation li{
-	display: inline;
-	padding-right: 50px;
-	font-family: Cambria;
-	font-size: 20px;
-}
-
-a:link, a:visited {
-	color: black;
-	text-decoration: none;
-}
-
-#logo {
-	float: left;
-	display: inline;
-}
-
-#searchbox {
-	float: left;
-	margin-top: 20px;
-	margin-left: 60px;
-}
-
-#search_bar {
-	margin-right: 0px;
-	font-size: 20px;
-	border-radius: 20px;
-}
-
-#menu {
-	position: relative;
-	left: -9.34%;
-	margin-top: 30px;
-}
-
-#about {
-	margin-left: 215px;
-}
-
-#contact {
-	margin-right: 780px;
-}
-
-#icons {
-	float: right;
-	margin-right: 100px;
-}
-
-.fa-search {
-	margin-right: 100px;
-}
-
-.fa-shopping-cart {
-	margin-left: 30px;
-}
-
-.fa-user-circle-o {
-	margin-left: 30px;
-}
-
-#list_book_button {
-	border-radius: 4px;
-	background-color: green;
-	color: gold;
-	font-weight: bold;
-}
-
 aside {
-	width: 200px;
-	height: 400px;
-	margin-left: 20px;
-	border: 0.5px solid black;
+	background: rgba(255, 255, 255, 0.95);
+	width: 15%;
+	height: 34.5em;
+	margin-left: 1%;
+	margin-top: 1%;
+	border: 1px solid black;
 	float: left;
 }
 
 main {
-	margin-left: 250px;
-	width: 1150px;
-	height: 600px;
+	background: rgba(255, 255, 255, 0.95);
+	margin-left: 18%;
+	margin-top: 1%;
+	width: 81%;
+	height: 34.5em;
 	border: 0.5px solid black;
-
 }
 
 aside p {
@@ -124,39 +24,37 @@ aside p {
 #aside_title {
 	text-align: center;
 	text-decoration: underline;
-}
-
-footer {
-	background-image: linear-gradient(lightgray, #E8E8E8);
-	margin-top: 43px;
-	min-height: 7vh
-}
-
-#copyright {
-	margin-left: 5%;
+	font-size: 120%;
 }
 
 
-/**Checkout page**/
-#aside_checkout {
-	float: right;
-	margin-right: 50px;
-	width: 400px;
-	height: 600px;
-	border: 1px solid black;
-}
+/*************************/
+/******Checkout page******/
+/*************************/
 
 #main_checkout_frame {
-	margin-left: 50px;
-	margin-right: 500px;
-	height: 600px;
+	background: rgba(255, 255, 255, 0.95);
+	margin-left: 5%;
+	width: 62%;
+	height: 34em;
+	margin-top: 1%;
 	border: 1px solid black;
-
 }
 
+#aside_checkout {
+	background: rgba(255, 255, 255, 0.95);
+	float: right;
+	margin-right: 5%;
+	width: 25%;
+	height: 34em;
+	margin-top: 1%;
+	border: 1px solid black;
+}
+
+
 .cart_item_frame {
-	margin: 50px;
-	height: 150px;
+	margin: 3%;
+	height: 28%;
 	border: 1px solid black;
 }
 
@@ -169,21 +67,16 @@ footer {
   float: left;
   width: 25%;
   height: 100%;
-  padding-top: 10px;
+  padding-top: 1%;
 }
 
 .buttons{
 	float:right;
-	padding-right: 10px;
+	padding-right: 5%;
 }
 
 #remove_book{
 	float:right;
-}
-
-#total_items {
-	width: 100%;
-	border-spacing: 15px;
 }
 
 #total_items td {
@@ -194,10 +87,16 @@ footer {
 #total_items th {
 	text-align: left;
 	padding: 5px;
+	width: 100%;
+	border-spacing: 15px;
 }
 
 
-input[type=text], textarea {
+/************************/
+/******Contact page******/
+/************************/
+
+#contact-fname, #contact-lname, textarea, #book-title, #author, #ISBN, #tags, #edition, #subject, #class-num, #price {
   width: 50%; 
   padding: 10px;  
   border: 1px solid #ccc; 
@@ -205,10 +104,10 @@ input[type=text], textarea {
   box-sizing: border-box; 
   margin-top: 1px; 
   margin-bottom: 10px; 
-  resize: vertical
+  resize: vertical;
 }
 
-input[type=email] {
+#contact-email {
   width: 50%; 
   padding: 10px; 
   border: 1px solid #ccc; 
@@ -216,11 +115,11 @@ input[type=email] {
   box-sizing: border-box; 
   margin-top: 1px; 
   margin-bottom: 10px; 
-  resize: vertical 
+  resize: vertical;
 }
 
 /* Submit button*/
-input[type=submit] {
+#contact-submit, #post-submit {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -230,7 +129,7 @@ input[type=submit] {
 }
 
 /* When moving the mouse over the submit button, add a yellow color */
-input[type=submit]:hover {
+#contact-submit:hover {
   background-color: #FFD700;
 }
 
@@ -240,14 +139,14 @@ input[type=submit]:hover {
   background-color: #f2f2f2;
   padding: 50px;
 }
-footer {
-	background-image: linear-gradient(lightgray, #E8E8E8);
-	margin-top: 20px;
-	margin-bottom: 0px;
-	bottom: 0px;
-	min-height: 7vh
+
+
+#contact-form, #post-form {
+	margin-left: 50px;
 }
 
-#total_items th {
-	text-align: left;
+#about-info {
+	margin-left: 50px;
+	font-size: 120%;
 }
+

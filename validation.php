@@ -4,7 +4,7 @@ session_start();
 
 $con = mysqli_connect('localhost','root','root1234');
 
-mysqli_select_db($con, 'userregistration');
+mysqli_select_db($con, 'flipbook');
 
 $email = $_POST['email'];
 $password = $_POST['password'];

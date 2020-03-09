@@ -1,7 +1,15 @@
+<?php
+  session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up - Flip Book</title>
+  <link rel="icon" type="image/png" href="images/flipbook_logo.png" />
+  <meta name="viewport" content="width=device-width, intial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="layout.css">
   <link rel="stylesheet" type="text/css" href="styles_nitisha.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -14,48 +22,55 @@
     <ul class="navigation">
       <!---Flip Book Logo--->
       <li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
-
-
+      
+      <!---Searchbar--->
+      <li>
+        <form id="searchbox" action="">
+          <input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+          <a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
+        </form>
+      </li>
+    
       <!---Menu items--->
-      <div id="menu">
+      <div>
         <br>
         <br>
-        <li><a id="about" href="About.html"></a></li>
-        <li><a id="contact" href="ContactUs.html"></a></li>
+        <br>
+        <li id="menu-contact"><a id="contact" href="ContactUs.html">Contact Us</a></li>
       </div>
     </ul>
   </nav>
 
+  <!---------------------->
+  <!---------Main--------->
+  <!---------------------->
 
+  <main id="login-main">
+    <form action="validation.php" method="post">
 
-  <main>
-      <p>
-        <div class="signup">
-          <h1 id="flip_book_login">Flip Book Login</h1>
+        <center><h1>Log into your FlipBook account!</h1></center>
 
-          <form action="validation.php" method="post">
-
-            <fieldset>
-          
               <label id="email"><b>Email Address: </b></label>
-              <input type="email" name="email" required> <br>
+              <input type="email" class="input-area" name="email" required> <br>
 
               <label id="password1"><b>Password: </b></label>
-              <input type="password" name="password" required> <br>
-
-            </fieldset>
+              <input type="password" class="input-area" name="password" required> <br>
 
             <button type="submit">Sign In</button>
+    </form>
 
-          </form>
+    <p class="account-status" >Don't have an account? <a href="signUpPage.html"><u>Register here!</u></a></p>
 
-          <center><div class= "loginLink">
-            <p> <a href="signUpPage.html">Don't have an account? <u>Sign Up!</u></a> </p>
-            <span class="psw">Did you forget your <a href="#"><u>password?</u></a></span>
-          </div></center>
-        </div>
-      </p>
   </main>
+
+
+  <!---------------------->
+  <!--------Footer-------->
+  <!---------------------->
+  <footer>
+    <p id="copyright">&copy; 2020, Flip Book, Inc.</p>
+  </footer>
+
 
 </body>
 </html>

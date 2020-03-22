@@ -55,7 +55,7 @@
 		
 		<p>All fields must be filled to successfully submit the form.</p>
 	<div class = "container">
-	<form action = "mail.php" method = "POST"> 
+	<form action = "inquiries.php" method = "POST"> 
 		<strong>
 		<label for = "myFName"> First Name: </label>
 		<input type = "text" name= "myFName" required = "required"> <br>

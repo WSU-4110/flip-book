@@ -4,11 +4,12 @@
 	<title>Flip Book</title>
 	<link rel="icon" type="image/png" href="images/flipbook_logo.png" />
 	<meta name="viewport" content="width=device-width, intial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="layout.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
 
+<body>
 	<!----------------------->
 	<!---Navigation/header--->
 	<!----------------------->
@@ -21,35 +22,38 @@
 			<li>
 				<form id="searchbox" action="">
 					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-					<a href=""><i class="fa fa-search" style="font-size:26px"></i></a>
+					<a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
 				</form>
 			</li>
-			
-
-			<!---Icons--->
-			<li>
-				<p id="icons">
-					<a href="post.html"><i class="fa fa-plus" style="font-size:36px"></i></a>
-					<a href="profile.html"><i class="fa fa-user-circle-o" style="font-size:36px"></i></a>
-					<a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:36px"></i></a>
-				</p>
-			</li>
 
 
+			<!--Icons-->
+			<li class="icons"><a href="logout.php" onclick="return confirm('Are you sure you want to logout?');"><i class="fa fa-sign-out" style="font-size:150%;color:red"></i></a></li>
+			<li class="icons"><a href="profile.html"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="post.html"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
+		
+
+		
 			<!---Menu items--->
-			<div id="menu">
+			<div>
 				<br>
 				<br>
-				<li><a id="about" href="About.html">About</a></li>
-				<li><a id="contact" href="ContactUs.html">Contact Us</a></li>
+				<br>
+				<li id="menu-about"><a id="about" href="About.html">About Us</a></li>
+				<li id="menu-contact"><a id="contact" href="ContactUs.html">Contact Us</a></li>
 			</div>
 		</ul>
 	</nav>
 
 
+	<!---------------------->
+	<!--Aside (Categories)-->
+	<!---------------------->
 	<aside>
 		<p id="aside_title">Categories</p>
 	</aside>
+
 	<main>
 		<h2>Have any questions?</h2>
 		

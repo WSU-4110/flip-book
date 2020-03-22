@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>Flip Book</title>
@@ -75,8 +75,11 @@
 	</div>
 	</main>
 
+	<!---------------------->
+	<!--------Footer-------->
+	<!---------------------->
 	<footer>
-		<p>	&copy; 2020, Flip Book, Inc.</p>
+		<p id="copyright">&copy; 2020, Flip Book, Inc.</p>
 	</footer>
 
 

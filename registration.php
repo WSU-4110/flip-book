@@ -3,7 +3,7 @@
 session_start();
 
 
-$con = mysqli_connect('localhost','root','root1234');
+$con = mysqli_connect('localhost','root','');
 
 mysqli_select_db($con, 'flipbook');
 
@@ -11,7 +11,6 @@ $email = $_POST['email'];
 $password = $_POST['password'];
 $fname = $_POST['fname'];
 $lname = $_POST['lname'];
-$phone = $_POST['phone'];
 $password2 = $_POST['password2'];
 
 $s = " select * from users where email = '$email'";
@@ -24,11 +23,11 @@ if($num == 1) {
 	echo "Email is already in use.";
 }
 else {
-	if ($password2 == $password) {
-		$reg = " insert into 'users' (email, password, fname, lname, phone) values ('$email', '$password', '$fname', '$lname', '$phone')";
+	if ($password == $password2) {
+		$reg = " insert into users (email, password, fname, lname) values ('$email', '$password', '$fname', '$lname')";
 		mysqli_query($con, $reg);
 		echo "Registration successful!";
-		header('location:login.html');
+		header('location:login.php');
 	}
 	else {
 		echo"<script type='text/javascript'>alert('Passwords do not match.');</script>";

@@ -84,7 +84,7 @@
 	
 
 	<main id="signup-main">
-		<form action="MAILTO:gh3717@wayne.edu" method="post" enctype="text/plain">
+		<form action="MAILTO:<?php echo($poster);?>" method="post" enctype="text/plain">
 
 				<center><h1>Contact Seller</h1></center>
 

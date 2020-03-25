@@ -1,37 +1,32 @@
 <?php
 
 session_start();
-header('location:post.html');
 
 $con = mysqli_connect('localhost','root','root1234');
 
 mysqli_select_db($con, 'flipbook');
 
+$email = $_SESSION['user'];
 $bookTitle = $_POST['book-title'];
 $author = $_POST['author'];
 $ISBN = $_POST['ISBN'];
 $edition = $_POST['edition'];
 $subject = $_POST['subject'];
 $classNum = $_POST['class-num'];
-$tags = $_POST['tags'];
 $price = $_POST['price'];
 $img = $_POST['img'];
 
 
-//$s = " select * from users where email = '$email'";
+$reg = "INSERT into posts (email, bookTitle, author, ISBN, edition, subject, classNum, price, img) VALUES ('$email', '$bookTitle', '$author', '$ISBN', '$edition', '$subject', '$classNum', '$price', '$img')";
 
-//$result = mysqli_query($con, $s);
-
-//$num = mysqli_num_rows($result);
-
-/*if($num == 1) {
-	echo "Posting unsuccessful.";
+if(mysqli_query($con, $reg)) {
+	$_SESSION['valid_post'] = true;
+	header("location:post.php");
 }
 else {
-	
-}*/
+	$_SESSION['valid_post'] = false;
+	header("location:post.php");
+}
 
-$reg = " insert into posts (bookTitle, author, ISBN, edition, subject, classNum, tags, price, img) values ('$bookTitle', '$author', '$ISBN', '$edition', '$subject', '$classNum', '$tags', '$price', '$img')";
-mysqli_query($con, $reg);
 
 ?>

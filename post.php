@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +24,9 @@
 			
 			<!---Searchbar--->
 			<li>
-				<form id="searchbox" action="">
-					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-					<a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
+				<form id="searchbox" action="main.php" method="post">
+					<input id="search_bar" name="search" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+					<input type="submit" value="search">
 				</form>
 			</li>
 
@@ -46,9 +50,10 @@
 	</nav>
 
 
+
 	<!---------------------->
 	<!--------Aside--------->
-	<!---------------------->
+	<!---------------------->	
 	<aside>
 		<p id="aside_title">Categories</p>
 		<form action="main.php" method="post">
@@ -90,25 +95,49 @@
 	<!---------------------->
 	<!--------Main---------->
 	<!---------------------->
-	<main id="about-main">
-		<center><h2>Get to know Flip Book! </h2></center>
+	<main>
+		<center><h2>Post a textbook</h2></center>
+	
+		<form id="post-form" method = "post" action="post_book.php" > 
+			<strong>
+				<label>Textbook title: </label>
+				<input id="book-title" type = "text" name= "book-title" required = "required"> <br>
+				<label>Author: </label>
+				<input id="author" type = "text" name = "author" required = "required"> <br>
+				<label>ISBN: </label>
+				<input id="ISBN" type = "text" name = "ISBN" required = "required"> <br>
+				<label>Edition: </label>
+				<input id="edition" type = "text" name = "edition" required = "required"> <br>
+				<label>Subject: </label>
+				<input id="subject" type = "text" name = "subject" required = "required"> <br>
+				<label>Class number: </label>
+				<input id="class-num" type = "text" name = "class-num"> <br>
+				<!--<label>Tags: </label>
+				<input id="tags" type = "text" name = "tags"> <br>-->
+				<label>Price: </label>
+				<input id="price" type = "text" name = "price"> <br>
+				<label for="img">Image of textbook cover:</label>
+				<input type="file" id="img" name="img" accept="image/*"> <br><br>
+				<input id="post-submit" type = "submit" value = "Post book" id = "mySubmit">
+			</strong>
+		</form>
 
-		<div id="about-info">
-			<p>As all broke college students know, textbooks remain extremely expensive and hard to locate online. Additionally, it is impossibly hard to locate sellers through Academica. Lucky for you, Flip Book is an easy to use platform open to stricly Wayne State University students and faculty to sell and buy textbooks at competitive prices without worrying about the costs of shipping. We value user satisfaction above everything and provide various functionalities for users to make the most of their time. As a buyer, you may browse through our vast database of course materials and find what matches your needs. On the other hand, as a seller, you will be able to make some quick cash listing books you no longer use.</p>
+		<?php
+		        if(isset($_SESSION['valid_post']) && $_SESSION['valid_post'] == true) {
+		        	echo "<p style='color:#25701d' align='center'>Book was posted successfully!</p>";
+		        	$_SESSION['valid_password'] = null;
+		        }
 
-			<h4>Here is what you can do on Flip Book:</h4>
-			<ol>
-				<li> Register as an official member</li>
-				<li> Post a book and set your listing price</li>
-				<li> Search for books by title, author, subject, or ISBN</li>
-				<li> Contact a seller</li>
-				<li> Checkout a book</li>
-			</ol>
-			
-			<p>If you have any questions, feel free to <a href = "ContactUs.php"><u>contact us!</u></a><br></p>
-		</div>
+		?>
+
+		<?php
+		        if(isset($_SESSION['valid_post']) && $_SESSION['valid_post'] == false) {
+		        	echo "<p style='color:#25701d' align='center'>Book could not be posted. Please try again.</p>";
+		        	$_SESSION['valid_password'] = null;
+		        }
+
+		?>
 	</main>
-
 
 
 	<!---------------------->
@@ -117,6 +146,15 @@
 	<footer>
 		<p id="copyright">&copy; 2020, Flip Book, Inc.</p>
 	</footer>
+
+
+	<script>
+		function myFunction() {
+		  var x = document.getElementById("img");
+		  x.disabled = true;
+		}
+	</script>
+
 
 
 </body>

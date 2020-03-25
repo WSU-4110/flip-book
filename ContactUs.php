@@ -115,14 +115,14 @@ session_start();
 			<?php
 		        if(isset($_SESSION['valid_inquiry']) && $_SESSION['valid_inquiry'] == true) {
 		        	echo "<p style='color:#25701d' align='center'>Thank you for reaching out! We will respond to you as soon as possible.</p>";
-		        	$_SESSION['valid_password'] = null;
+		        	$_SESSION['valid_inquiry'] = null;
 		        }
 			?>
 
 			<?php
 		        if(isset($_SESSION['valid_inquiry']) && $_SESSION['valid_inquiry'] == false) {
 		        	echo "<p style='color:#25701d' align='center'>Error: message could not be sent!</p>";
-		        	$_SESSION['valid_password'] = null;
+		        	$_SESSION['valid_inquiry'] = null;
 		        }
 			?>
 	</main>

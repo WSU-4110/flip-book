@@ -35,10 +35,10 @@
 			</li>
 
 			<!--Icons-->
+			<li class="icons"><a href="logout.php" onclick="return confirm('Are you sure you want to logout?');"><i class="fa fa-sign-out" style="font-size:150%;color:red"></i></a></li>
 			<li class="icons"><a href="profile.php"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="checkout.php"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="post.php"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
-			<p> <?php echo $email;?></p>
 		
 			<!---Menu items--->
 			<div>
@@ -52,8 +52,7 @@
 	</nav>
 
 	<aside id="aside_checkout">
-		<p id="aside_title">Cart Total for </p>
-			<input name="email" type="text" id="email" value="<?php echo($email); ?>" readonly> <br>
+		<p id="aside_title">Cart Total </p>
 		<table id="total_items">
 			<tr>
 				<th>Books</th>
@@ -92,7 +91,6 @@
 			</div>
 			<div class="column">
 				<div class="buttons">
-					<p id="contact_seller" href="contactSeller.php"><button style="font-size: 18px">Contact Seller</button></p>
 					<p id="remove_book" href=""><button style="font-size: 18px">Remove Book</button></p>
 				</div>
 			</div>

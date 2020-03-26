@@ -1,3 +1,14 @@
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------ASSIGNMENT 5 NOTE----------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- For this assignment, the php code was changed to implement the design pattern. You will find these changes towards the middle of the   -->
+<!-- file. There are comments to help describe what was changed and how this improved the code. The comments associated with the project    -->
+<!-- being with "Assignment 5" so that it is more clear for you to see which comments are for this assignment.                              -->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -95,6 +106,8 @@
 	<main>
 		<div style="color:black; text-align: center; font-size: 70%">
 			<br><br>
+
+			<!--Assignment 5: The php code on this page was altered using the factory method design pattern, so that instead of having two separate php segments, one for the search bar and one for categorize function, they were combined into one php code segment. This reduces the amount of code used, which improves the code design, leaving it significantly shorter, more organized, and easier to manage and understand what the code is doing.-->
 			<?php
 					session_start();
 
@@ -105,94 +118,100 @@
 					//variables
 					$output = '';
 					$img_output = '';
+					$searchq = ''; // Assignment 5: This variable was added so that it can support alterations depending on whether the user is using the search bar or if the user is using the categories functionality.
 
 					//if else statement to check whether search matches anything in database
 					if(isset($_POST['search'])) {
 						$searchq = $_POST['search'];
-
-						$query = mysqli_query($con,"SELECT * FROM posts WHERE bookTitle LIKE '%$searchq%'") or die("Could not search!");
-						$count = mysqli_num_rows($query);
-
-						if($count == 0) {
-							// if no search results are found in database
-							$output .= '<h2>'.'No search results!'.'</h2>';
-						}
-						else {
-							// returning data if search is successful
-						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
-							while ($row = mysqli_fetch_array($query)) {
-
-								// Assigning variables to store data
-								$bookTitle = $row['bookTitle'];
-								$author = $row['author'];
-								$ISBN = $row['ISBN'];
-								$edition = $row['edition'];
-								$subject = $row['subject'];
-								$classNum = $row['classNum'];
-								$price = $row['price'];
-								$img = $row['img'];
-
-								$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
-								//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
-
-								echo "<tr><td>$img_output</td></tr> <tr><td>$bookTitle</td></tr> <tr><td>$author</td></tr> <tr><td>$$price</td></tr>";
-
-							}
-						echo '</table>';
-
-						}
 					}
 
+					else if(isset($_POST['category'])) {
+						$searchq = $_POST['category'];
+					}
+						
+					$query = mysqli_query($con,"SELECT * FROM posts WHERE bookTitle LIKE '%$searchq%'") or die("Could not search!");
+					$count = mysqli_num_rows($query);
+
+					if($count == 0) {
+						// if no search results are found in database
+						//$output .= '<h2>'.'No search results!'.'</h2>';
+						echo '<p style="font-size: 150%">No search results!</p>';
+					}
+					else {
+						// returning data if search is successful
+					echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
+						while ($row = mysqli_fetch_array($query)) {
+
+							// Assigning variables to store data
+							$bookTitle = $row['bookTitle'];
+							$author = $row['author'];
+							$ISBN = $row['ISBN'];
+							$edition = $row['edition'];
+							$subject = $row['subject'];
+							$classNum = $row['classNum'];
+							$price = $row['price'];
+							$img = $row['img'];
+
+							$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
+							//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
+
+							echo "<tr><td>$img_output</td></tr> <tr><td>$bookTitle</td></tr> <tr><td>$author</td></tr> <tr><td>$$price</td></tr>";
+
+						}
+					echo '</table>';
+					}
 			?>
 
+			<!-- This is the code segment that is no longer needed thanks to the design pattern implementation. In our actual project code, we will not include this portion, but we left it here to demonstrate how big of an impact the design pattern implementation left. Our code is now more concise and easier to understand and manage.
 			<?php
-					$con = mysqli_connect('localhost','root','root1234');
+					//$con = mysqli_connect('localhost','root','root1234');
 
-					mysqli_select_db($con, 'flipbook');
+					//mysqli_select_db($con, 'flipbook');
 
 					//variables
-					$output = '';
-					$img_output = '';
+					//$output = '';
+					//$img_output = '';
 
 					//if else statement to check whether search matches anything in database
-					if(isset($_POST['category'])) {
-						$searchq = $_POST['category'];
+					//if(isset($_POST['category'])) {
+						//$searchq = $_POST['category'];
 
-						$query = mysqli_query($con,"SELECT * FROM posts WHERE subject LIKE '%$searchq%'") or die("Could not search!");
-						$count = mysqli_num_rows($query);
+						//$query = mysqli_query($con,"SELECT * FROM posts WHERE subject LIKE '%$searchq%'") or die("Could not search!");
+						//$count = mysqli_num_rows($query);
 
-						if($count == 0) {
+						//if($count == 0) {
 							// if no search results are found in database
-							echo '<p style="font-size: 150%">No search results!</p>';
+							//echo '<p style="font-size: 150%">No search results!</p>';
 
 						}
-						else {
+						//else {
 							// returning data if search is successful
-						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
-							while ($row = mysqli_fetch_array($query)) {
+						//echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
+							//while ($row = mysqli_fetch_array($query)) {
 
 								// Assigning variables to store data
-								$bookTitle = $row['bookTitle'];
-								$author = $row['author'];
-								$ISBN = $row['ISBN'];
-								$edition = $row['edition'];
-								$subject = $row['subject'];
-								$classNum = $row['classNum'];
-								$price = $row['price'];
-								$img = $row['img'];
+								//$bookTitle = $row['bookTitle'];
+								//$author = $row['author'];
+								//$ISBN = $row['ISBN'];
+								//$edition = $row['edition'];
+								//$subject = $row['subject'];
+								//$classNum = $row['classNum'];
+								//$price = $row['price'];
+								//$img = $row['img'];
 
-								$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
+								//$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
 								//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
 
-								echo "<tr><td>$img_output</td></tr> <tr><td>$bookTitle</td></tr> <tr><td>$author</td></tr> <tr><td>$$price</td></tr>";
+								//echo "<tr><td>$img_output</td></tr> <tr><td>$bookTitle</td></tr> <tr><td>$author</td></tr> <tr><td>$$price</td></tr>";
 
 							}
-						echo '</table>';
+						//echo '</table>';
 
 						}
 					}
 
-			?>
+			?>-->
+
 		</div>
 
 		

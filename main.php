@@ -108,6 +108,7 @@
 			<br><br>
 
 			<!--Assignment 5: The php code on this page was altered using the factory method design pattern, so that instead of having two separate php segments, one for the search bar and one for categorize function, they were combined into one php code segment. This reduces the amount of code used, which improves the code design, leaving it significantly shorter, more organized, and easier to manage and understand what the code is doing.-->
+			
 			<?php
 					session_start();
 
@@ -121,6 +122,8 @@
 					$searchq = ''; // Assignment 5: This variable was added so that it can support alterations depending on whether the user is using the search bar or if the user is using the categories functionality.
 
 					//if else statement to check whether search matches anything in database
+					
+					//UML label: IfSearchOrCategory
 					if(isset($_POST['search'])) {
 						$searchq = $_POST['search'];
 					}
@@ -140,6 +143,8 @@
 					else {
 						// returning data if search is successful
 					echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
+
+					// UML label: CreateObjects
 						while ($row = mysqli_fetch_array($query)) {
 
 							// Assigning variables to store data

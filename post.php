@@ -56,7 +56,7 @@ session_start();
 	<!---------------------->	
 	<aside>
 		<p id="aside_title">Categories</p>
-		<form action="main.php" method="post">
+		<form id="form_categories" action="main.php" method="post">
 			<select name="category">
 				<option value="Accounting">Accounting</option>
 				<option value="Art">Art</option>
@@ -82,7 +82,7 @@ session_start();
 				<option value="Philosophy">Philosophy</option>
 				<option value="Political Science">Political Science</option>
 				<option value="Psychology">Psychology</option>
-				<option value="Sociology">Sociology</option>-
+				<option value="Sociology">Sociology</option>
 			</select>
 			<input type="submit" value="Submit">
   			
@@ -109,7 +109,33 @@ session_start();
 				<label>Edition: </label>
 				<input id="edition" type = "text" name = "edition" required = "required"> <br>
 				<label>Subject: </label>
-				<input id="subject" type = "text" name = "subject" required = "required"> <br>
+				<select name="subject">
+					<option value="Accounting">Accounting</option>
+					<option value="Art">Art</option>
+					<option value="Biology">Biology</option>
+					<option value="Calculus">Calculus</option>
+					<option value="Chemistry">Chemistry</option>
+					<option value="Computer Science">Computer Science</option>
+					<option value="Criminal Justice">Criminal Justice</option>
+					<option value="Dance">Dance</option>
+					<option value="Economics">Economics</option>
+					<option value="Education">Education</option>
+					<option value="Engineering">Engineering</option>
+					<option value="Environmental Science">Environmental Science</option>
+					<option value="History">History</option>
+					<option value="Journalism">Journalism</option>
+					<option value="Languages">Languages</option>
+					<option value="Law">Law</option>
+					<option value="Management">Management</option>
+					<option value="Medicine">Medicine</option>
+					<option value="Music">Music</option>
+					<option value="Nursing">Nursing</option>
+					<option value="Pharmacy">Pharmacy</option>
+					<option value="Philosophy">Philosophy</option>
+					<option value="Political Science">Political Science</option>
+					<option value="Psychology">Psychology</option>
+					<option value="Sociology">Sociology</option>
+			</select><br>
 				<label>Class number: </label>
 				<input id="class-num" type = "text" name = "class-num"> <br>
 				<!--<label>Tags: </label>

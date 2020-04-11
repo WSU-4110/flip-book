@@ -1,74 +1,3 @@
-nav {
-	margin-top: 20px;
-	margin-left: 50px;
-	margin-right: 50px;
-	padding-bottom: 20px;
-}
-
-#search_bar {
-	margin-left: 50px;
-	font-size: 26px;
-}
-
-
-#icons {
-	float: right;
-}
-
-.fa-search {
-	margin-left: 10px;
-}
-
-.fa-question-circle {
-	margin-left: 25px;
-}
-
-.fa-envelope {
-	margin-left: 25px;
-}
-
-.fa-user-circle-o {
-	margin-left: 25px;
-}
-
-.fa-shopping-cart {
-	margin-left: 25px;
-}
-
-a:link, a:visited {
-	color: black;
-}
-
-aside {
-	float: left;
-	margin-left: 50px;
-	width: 200px;
-	height: 600px;
-	border: 1px solid black;
-	
-}
-
-main {
-	margin-left: 300px;
-	margin-right: 50px;
-	height: 600px;
-	border: 1px solid black;
-
-}
-
-aside p {
-	font-family: Cambria;
-}
-
-#aside_title {
-	text-align: center;
-	text-decoration: underline;
-}
-
-footer {
-	margin-left: 50px;
-}
-=======
 aside {
 	background: rgba(255, 255, 255, 0.95);
 	width: 15%;
@@ -274,3 +203,4 @@ aside p {
 	margin-left: 50px;
 	font-size: 120%;
 }
+

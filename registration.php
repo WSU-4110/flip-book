@@ -32,7 +32,7 @@ else {
 	$reg = " insert into users(email, password, fname, lname) values ('$email', '$password', '$fname', '$lname') ";
 	mysqli_query($con, $reg);
 	echo "Registration successful!";
-	header('location:login.php');
+	header('location:login.html');
 }
 
 

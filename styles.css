@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 nav {
 	margin-top: 20px;
 	margin-left: 50px;
@@ -68,3 +69,211 @@ aside p {
 footer {
 	margin-left: 50px;
 }
+=======
+aside {
+	background: rgba(255, 255, 255, 0.95);
+	width: 15%;
+	height: 34.5em;
+	margin-left: 1%;
+	margin-top: 1%;
+	border: 1px solid black;
+	float: left;
+}
+
+main {
+	background: rgba(255, 255, 255, 0.95);
+	margin-left: 18%;
+	margin-top: 1%;
+	width: 81%;
+	height: 34.5em;
+	border: 0.5px solid black;
+}
+
+aside p {
+	font-family: Cambria;
+}
+
+#aside_title {
+	text-align: center;
+	text-decoration: underline;
+	font-size: 120%;
+}
+
+#categories {
+	list-style-type: none;
+	font-size: 95%;
+	text-decoration: underline;
+}
+
+/*************************/
+/********Main page********/
+/*************************/
+
+#listings {
+	text-align: center;
+	font-size: 60%;
+	color: black;
+}
+
+
+/*************************/
+/******Checkout page******/
+/*************************/
+
+#main_checkout_frame {
+	background: rgba(255, 255, 255, 0.95);
+	margin-left: 5%;
+	width: 62%;
+	height: 34em;
+	margin-top: 1%;
+	border: 1px solid black;
+}
+
+#aside_checkout {
+	background: rgba(255, 255, 255, 0.95);
+	float: right;
+	margin-right: 5%;
+	width: 25%;
+	height: 34em;
+	margin-top: 1%;
+	border: 1px solid black;
+}
+
+
+.cart_item_frame {
+	margin: 3%;
+	height: 28%;
+	border: 1px solid black;
+}
+
+#book_image {
+	height: 130px;
+	padding-left: 10px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  height: 100%;
+  padding-top: 1%;
+}
+
+.buttons{
+	float:right;
+	padding-right: 5%;
+}
+
+#remove_book{
+	float:right;
+}
+
+#total_items td {
+	padding: 5px;
+
+}
+
+#total_items th {
+	text-align: left;
+	padding: 5px;
+	width: 100%;
+	border-spacing: 15px;
+}
+
+
+/************************/
+/******Contact page******/
+/************************/
+
+#contact-fname, #contact-lname, textarea, #book-title, #author, #ISBN, #tags, #edition, #subject, #class-num, #price {
+  width: 50%; 
+  padding: 10px;  
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  margin-top: 1px; 
+  margin-bottom: 10px; 
+  resize: vertical;
+}
+
+#contact-email {
+  width: 50%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  margin-top: 1px; 
+  margin-bottom: 10px; 
+  resize: vertical;
+}
+
+/* Submit button*/
+#contact-submit, #post-submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a yellow color */
+#contact-submit:hover {
+  background-color: #FFD700;
+}
+
+/* Add a background color and some padding around the form */
+
+#post-form {
+	margin-left: 50px;
+}
+
+.contactform input[type=text], textarea {
+  width: 50%; 
+  padding: 10px;  
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  margin-top: 1px; 
+  margin-bottom: 10px; 
+  resize: vertical
+}
+
+.contactform input[type=email], email {
+  width: 50%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  margin-top: 1px; 
+  margin-bottom: 10px; 
+  resize: vertical 
+}
+
+/* Submit button*/
+.contactform input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a yellow color */
+.contactform input[type=submit]:hover {
+  background-color: #FFD700;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 30px;
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+#about-info {
+	margin-left: 50px;
+	font-size: 120%;
+}
+
+>>>>>>> master

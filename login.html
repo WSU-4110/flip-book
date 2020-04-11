@@ -1,100 +1,76 @@
+<?php
+  session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-form {border: 3px solid #f1f1f1;}
-
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-button {
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-.imgcontainer {
-  text-align: right;
-  margin: 0px 0 12px 0;
-}
-
-
-img.avatar {
-  width: 10%;
-  border-radius: 15%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
-}
-</style>
+  <title>Sign Up - Flip Book</title>
+  <link rel="icon" type="image/png" href="images/flipbook_logo.png" />
+  <meta name="viewport" content="width=device-width, intial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="layout.css">
+  <link rel="stylesheet" type="text/css" href="styles_nitisha.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
+  <!----------------------->
+  <!---Navigation/header--->
+  <!----------------------->
+  <nav>
+    <ul class="navigation">
+      <!---Flip Book Logo--->
+      <li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
+      
+      <!---Searchbar--->
+      <li>
+        <form id="searchbox" action="">
+          <input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+          <a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
+        </form>
+      </li>
+    
+      <!---Menu items--->
+      <div>
+        <br>
+        <br>
+        <br>
+        <li id="menu-contact"><a id="contact" href="ContactUs.html">Contact Us</a></li>
+      </div>
+    </ul>
+  </nav>
 
-<h2>Flip Book Login
+  <!---------------------->
+  <!---------Main--------->
+  <!---------------------->
 
-<form action="/action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="fblogo.jpg" alt="Avatar" class="avatar">
-  </div>
-  </h2>
+  <main id="login-main">
+    <form action="validation.php" method="post">
 
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+        <center><h1>Login to your FlipBook account!</h1></center>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-        
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
+              <label id="email"><b>Email Address: </b></label>
+              <input type="email" class="input-area" name="email" required> <br>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
+              <label id="password1"><b>Password: </b></label>
+              <input type="password" class="input-area" name="password" required> <br>
+
+            <button type="submit">Sign In</button>
+    </form>
+
+    <p class="account-status" >Don't have an account? <a href="signUpPage.html"><u>Register here!</u></a></p>
+
+  </main>
+
+
+  <!---------------------->
+  <!--------Footer-------->
+  <!---------------------->
+  <footer>
+    <p id="copyright">&copy; 2020, Flip Book, Inc.</p>
+  </footer>
+
 
 </body>
 </html>

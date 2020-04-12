@@ -55,6 +55,7 @@ aside p {
 	height: 34em;
 	margin-top: 1%;
 	border: 1px solid black;
+	overflow: auto;
 }
 
 #aside_checkout {

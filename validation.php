@@ -16,7 +16,7 @@ $result = mysqli_query($con, $s);
 $num = mysqli_num_rows($result);
 
 if($num == 1) {
-	//$_SESSION['email'] = $email;
+	$_SESSION['user'] = $email;
 	header('location:main.html');
 }
 else {

@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+	session_start()
+?>
 <html>
 <head>
 	<title>Welcome - Flip Book</title>
@@ -32,7 +35,7 @@
 			<!--Icons-->
 			<li class="icons"><a href="logout.php" onclick="return confirm('Are you sure you want to logout?');"><i class="fa fa-sign-out" style="font-size:150%;color:red"></i></a></li>
 			<li class="icons"><a href="profile.html"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
-			<li class="icons"><a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="checkout.php"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="post.php"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
 
 		
@@ -96,106 +99,66 @@
 		<div style="color:black; text-align: center; font-size: 70%">
 			<br><br>
 			<?php
-					session_start();
+				//session_start();
 
-					$con = mysqli_connect('localhost','root','root1234');
+				$con = mysqli_connect('localhost','root','root1234');
 
-					mysqli_select_db($con, 'flipbook');
+				mysqli_select_db($con, 'flipbook');
 
-					//variables
-					$output = '';
-					$img_output = '';
+				//variables
+				$output = '';
+				$img_output = '';
 
-					//if else statement to check whether search matches anything in database
-					if(isset($_POST['search'])) {
-						$searchq = $_POST['search'];
+				//if else statement to check whether search matches anything in database
+				if(isset($_POST['search'])) {
+					$searchq = $_POST['search'];
 
-						$query = mysqli_query($con,"SELECT * FROM posts WHERE bookTitle LIKE '%$searchq%'") or die("Could not search!");
-						$count = mysqli_num_rows($query);
+					$query = mysqli_query($con,"SELECT * FROM posts WHERE bookTitle LIKE '%$searchq%'") or die("Could not search!");
+					$count = mysqli_num_rows($query);
 
-						if($count == 0) {
-							// if no search results are found in database
-							$output .= '<h2>'.'No search results!'.'</h2>';
-						}
-						else {
-							// returning data if search is successful
-						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
-							while ($row = mysqli_fetch_array($query)) {
-
-								// Assigning variables to store data
-								$bookTitle = $row['bookTitle'];
-								$author = $row['author'];
-								$ISBN = $row['ISBN'];
-								$edition = $row['edition'];
-								$subject = $row['subject'];
-								$classNum = $row['classNum'];
-								$price = $row['price'];
-								$img = $row['img'];
-
-								$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
-								//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
-
-								echo "<tr><td>$img_output</td></tr> <tr><td>$bookTitle</td></tr> <tr><td>$author</td></tr> <tr><td>$$price</td></tr>";
-
-							}
-						echo '</table>';
-
-						}
+					if($count == 0) {
+						// if no search results are found in database
+						$output .= '<h2>'.'No search results!'.'</h2>';
 					}
-
-			?>
-
-			<?php
-					$con = mysqli_connect('localhost','root','root1234');
-
-					mysqli_select_db($con, 'flipbook');
-
-					//variables
-					$output = '';
-					$img_output = '';
-
-					//if else statement to check whether search matches anything in database
-					if(isset($_POST['category'])) {
-						$searchq = $_POST['category'];
-
-						$query = mysqli_query($con,"SELECT * FROM posts WHERE subject LIKE '%$searchq%'") or die("Could not search!");
-						$count = mysqli_num_rows($query);
-
-						if($count == 0) {
-							// if no search results are found in database
-							echo '<p style="font-size: 150%">No search results!</p>';
-
-						}
-						else {
-							// returning data if search is successful
+					else {
+						// returning data if search is successful
 						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
-							while ($row = mysqli_fetch_array($query)) {
+						while ($row = mysqli_fetch_array($query)) {
 
-								// Assigning variables to store data
-								$bookTitle = $row['bookTitle'];
-								$author = $row['author'];
-								$ISBN = $row['ISBN'];
-								$edition = $row['edition'];
-								$subject = $row['subject'];
-								$classNum = $row['classNum'];
-								$price = $row['price'];
-								$img = $row['img'];
+							// Assigning variables to store data
+							$bookid = $row['bookid'];
+							$bookTitle = $row['bookTitle'];
+							$author = $row['author'];
+							$ISBN = $row['ISBN'];
+							$edition = $row['edition'];
+							$subject = $row['subject'];
+							$classNum = $row['classNum'];
+							$price = $row['price'];
+							$img = $row['img'];
 
-								$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
-								//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
+							$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
+							//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
 
-								echo "<tr><td>$img_output</td></tr> <tr><td>$bookTitle</td></tr> <tr><td>$author</td></tr> <tr><td>$$price</td></tr>";
-
-							}
-						echo '</table>';
-
+							echo 	"<tr>
+										<td>$img_output
+									<tr>
+										<td>$bookTitle										
+									<tr>
+										<td>$author
+									<tr>
+										<td>$$price
+									<tr>
+										<form action='addToCart.php' method='post'>
+											<input type='hidden' name='specificBook' value='".$bookid."'>
+											<td><input type='submit' value='Add to Cart'>
+										</form>";
 						}
+						echo '</table>';
 					}
-
+				}
+				
 			?>
 		</div>
-
-		
 	</main>
 
 

@@ -88,7 +88,7 @@
 		</form>
 			
 
-		<p class="account-status" >Already have an account? <a href="login.php"><u>Login here!</u></a></p>
+		<p class="account-status" >Already have an account? <a href="login.html"><u>Login here!</u></a></p>
 	</main>
 	
 

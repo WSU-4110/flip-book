@@ -59,7 +59,7 @@
 		<?php
 			$cartTotal = 0;
 			//grab the current user's email
-			$email = $_SESSION['email'];
+			$email = $_SESSION['user'];
 			//check the cart table and collect all the books in their account
 			$cartedBooks = mysqli_query($con,"SELECT * FROM cart WHERE email LIKE '%$email%'");
 			//record the quantity
@@ -98,7 +98,7 @@
 	<div id="main_checkout_frame">
 		<?php
 			//grab the current user's email
-			$email = $_SESSION['email'];
+			$email = $_SESSION['user'];
 			//check the cart table and collect all the books in their account
 			$cartedBooks = mysqli_query($con,"SELECT * FROM cart WHERE email LIKE '%$email%'");
 			//record the quantity

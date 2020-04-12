@@ -6,7 +6,7 @@ $con = mysqli_connect('localhost','root','root1234');
 
 mysqli_select_db($con, 'flipbook');
 
-$email = $_SESSION['user'];
+$email = $_SESSION['email'];
 $bookTitle = $_POST['book-title'];
 $author = $_POST['author'];
 $ISBN = $_POST['ISBN'];

@@ -4,7 +4,7 @@ session_start();
 $con = mysqli_connect('localhost','root','root1234');
 mysqli_select_db($con, 'flipbook');
 
-$email = $_SESSION['email'];
+$email = $_SESSION['user'];
 $bookid = $_POST['specificBook'];
 
 $check = mysqli_query($con,"SELECT * FROM cart WHERE bookid = '$bookid' AND email = '$email'");

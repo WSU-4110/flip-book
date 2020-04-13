@@ -1,0 +1,70 @@
+
+
+--
+-- Database: `flipbook`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+CREATE TABLE IF NOT EXISTS `cart` (
+  `email` varchar(100) NOT NULL,
+  `bookid` int(4) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `posts`
+--
+
+DROP TABLE IF EXISTS `posts`;
+CREATE TABLE IF NOT EXISTS `posts` (
+  `bookid` int(4) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `bookTitle` varchar(500) NOT NULL,
+  `author` varchar(100) NOT NULL,
+  `ISBN` varchar(100) NOT NULL,
+  `edition` int(2) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `classNum` varchar(10) NOT NULL,
+  `price` double NOT NULL,
+  `img` blob NOT NULL,
+  PRIMARY KEY (`bookid`)
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `userinquiry`
+--
+
+DROP TABLE IF EXISTS `userinquiry`;
+CREATE TABLE IF NOT EXISTS `userinquiry` (
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `comment` varchar(500) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `fname` varchar(100) NOT NULL,
+  `lname` varchar(100) NOT NULL,
+  PRIMARY KEY (`email`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+

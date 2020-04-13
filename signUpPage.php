@@ -67,6 +67,8 @@
 		        	<input type="password" class="input-area" name="password2" required> <br>
 						
 					<button type="submit">Sign In</button>
+					
+					
 		</form>
 
 		<p class="account-status" >Already have an account? <a href="login.php"><u>Login here!</u></a></p>

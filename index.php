@@ -31,6 +31,7 @@
 				<br>
 				<br>
 				<br>
+				<li id="menu-about"><a id="about" href="About.php">About Us</a></li>
 				<li id="menu-contact"><a id="contact" href="ContactUs.php">Contact Us</a></li>
 			</div>
 		</ul>

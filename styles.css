@@ -1,49 +1,20 @@
-.navigation {
-	list-style-type: none;
-  background-color: #d3d3d3;
-
-}
-
-.navigation li{
-	display: inline;
-	padding-right: 140px;
-	font-family: Cambria;
-	font-size: 18px;
-}
-
-#search_bar {
-	margin-right: 405px;
-	font-size: 20px;
-  height: 50px;
-}
-
-#about {
-	margin-left: 300px;
-}
-
-#contact {
-	margin-right: 650px;
-}
-
-#icons {
-	float: right;
-	margin-right: 100px;
-}
-
-.fa-shopping-cart {
-	margin-left: 30px;
-}
-
-a:link, a:visited {
-	color: black;
+aside {
+	background: rgba(255, 255, 255, 0.95);
+	width: 15%;
+	height: 34.5em;
+	margin-left: 1%;
+	margin-top: 1%;
+	border: 1px solid black;
+	float: left;
 }
 
 main {
-	margin-left: 250px;
-	width: 1150px;
-	height: 600px;
-	border: none;
-
+	background: rgba(255, 255, 255, 0.95);
+	margin-left: 18%;
+	margin-top: 1%;
+	width: 81%;
+	height: 34.5em;
+	border: 0.5px solid black;
 }
 
 aside p {
@@ -53,65 +24,129 @@ aside p {
 #aside_title {
 	text-align: center;
 	text-decoration: underline;
-}
-
-form {
-  max-width: 550px;
-  margin: 8px auto;
-  margin-right: 350px;
-  padding: 8px 15px;
-  background: #d3d3d3;
-  border-radius: 8px;
-  line-height: 2;
-  font-family: Cambria;
-}
-
-fieldset {
-    margin-bottom: 30px;
-    border: none;
+	font-size: 120%;
 }
 
 
+/*************************/
+/******Checkout page******/
+/*************************/
 
-legend {
-  display: block;
-  margin-bottom: 8px;
+#main_checkout_frame {
+	background: rgba(255, 255, 255, 0.95);
+	margin-left: 5%;
+	width: 62%;
+	height: 34em;
+	margin-top: 1%;
+	border: 1px solid black;
 }
 
-.section {
-  background-color: #5fcf80;
-  color: #fff;
-  height: 30px;
-  width: 30px;
-  display: inline-block;
-  font-size: 0.8em;
-  margin-right: 4px;
-  line-height: 30px;
-  text-align: center;
-  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
-  border-radius: 100%;
+#aside_checkout {
+	background: rgba(255, 255, 255, 0.95);
+	float: right;
+	margin-right: 5%;
+	width: 25%;
+	height: 34em;
+	margin-top: 1%;
+	border: 1px solid black;
 }
 
-.signup h1 {
-  margin-left: 10cm;
-  font-family: Cambria;
+
+.cart_item_frame {
+	margin: 3%;
+	height: 28%;
+	border: 1px solid black;
 }
 
-button[type="submit"] {
-  padding: 19px 39px 18px 39px;
-  color: #FFF;
-  background-color: #4bc970;
-  font-size: 18px;
-  text-align: center;
-  font-style: normal;
-  border-radius: 5px;
-  width: 100%;
-  border: 1px solid #3ac162;
-  border-width: 1px 1px 3px;
-  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-  margin-bottom: 10px;
+#book_image {
+	height: 130px;
+	padding-left: 10px;
 }
 
-.fa fa-plus {
-  margin-bottom: 3cm;
+.column {
+  float: left;
+  width: 25%;
+  height: 100%;
+  padding-top: 1%;
 }
+
+.buttons{
+	float:right;
+	padding-right: 5%;
+}
+
+#remove_book{
+	float:right;
+}
+
+#total_items td {
+	padding: 5px;
+
+}
+
+#total_items th {
+	text-align: left;
+	padding: 5px;
+	width: 100%;
+	border-spacing: 15px;
+}
+
+
+/************************/
+/******Contact page******/
+/************************/
+
+#contact-fname, #contact-lname, textarea, #book-title, #author, #ISBN, #tags, #edition, #subject, #class-num, #price {
+  width: 50%; 
+  padding: 10px;  
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  margin-top: 1px; 
+  margin-bottom: 10px; 
+  resize: vertical;
+}
+
+#contact-email {
+  width: 50%; 
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  margin-top: 1px; 
+  margin-bottom: 10px; 
+  resize: vertical;
+}
+
+/* Submit button*/
+#contact-submit, #post-submit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a yellow color */
+#contact-submit:hover {
+  background-color: #FFD700;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 30px;
+  background-color: #f2f2f2;
+  padding: 50px;
+}
+
+
+#contact-form, #post-form {
+	margin-left: 50px;
+}
+
+#about-info {
+	margin-left: 50px;
+	font-size: 120%;
+}
+

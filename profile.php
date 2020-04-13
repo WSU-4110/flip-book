@@ -2,20 +2,54 @@
 	session_start();
 	
 	// connecting to host via phpmyadmin
-	$con = mysqli_connect('localhost','root','');
+	$con = mysqli_connect('localhost','root','root1234');
 
 	// selecting youtube database from connection
 	mysqli_select_db($con, 'flipbook');
 	
 	$email = $_SESSION['user'];
 	
-	// match user email to rest of the user's information
+	$date = 'CURDATE()';
+	
+	// match user to user info
 	$query = " SELECT * FROM users WHERE email = '$email' ";
 	$result = mysqli_query($con, $query);
-
+	
 	$row = mysqli_fetch_array($result);
 	$fname = $row[2];
 	$lname = $row[3];
+	
+	
+	// check if user posted any books
+	$userQuery = " SELECT email FROM posts WHERE email = '$email' ";
+	$userResult = mysqli_query($con, $userQuery);
+	$count = mysqli_num_rows($userResult); 
+	
+	if ($count == 0) {
+		echo ("You have not posted anything yet.");
+	}
+	else {
+		
+		// fetch user's recent listings
+		$sql = " SELECT MAX(postdate) from posts WHERE email = '$email' ";
+		$sql_result = mysqli_query($con, $sql);
+		
+		$daterow = mysqli_fetch_array($sql_result);
+		$recentListing = $daterow[0];
+		
+		// fetch information pretaining the most recent date
+		$sql2 = " SELECT * from posts WHERE email = '$email' AND postdate = $date ORDER BY $date DESC LIMIT 1 ";
+		$sql_result2 = mysqli_query($con, $sql2);
+		
+		$recentBook = mysqli_fetch_array($sql_result2);
+		$recentBookId = $recentBook[0];
+		$recentBookTitle = $recentBook[2];
+		$recentBookAuthor = $recentBook[3];
+	}
+
+	
+	
+	
 	
 	
 ?>
@@ -117,9 +151,22 @@
 						
 							 <div class="data">
 							 
-								<h4>Recent</h4>
+								<h4>Most Recent Listing</h4>
 								<p>
-										TBD
+									<?php 
+									
+										if ($count == 0) {
+											echo ("You have not posted anything yet.");
+										}
+										
+										else {
+											echo ("Date: ".$recentListing.'<br>');
+											echo ("Title: ".$recentBookTitle.'<br>'); 
+											echo ("Author: ".$recentBookAuthor.'<br>'); 
+										}
+									
+										
+									?>
 								</p>
 								
 							 </div>

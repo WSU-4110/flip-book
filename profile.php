@@ -1,5 +1,23 @@
 <?php
 	session_start();
+	
+	// connecting to host via phpmyadmin
+	$con = mysqli_connect('localhost','root','');
+
+	// selecting youtube database from connection
+	mysqli_select_db($con, 'flipbook');
+	
+	$email = $_SESSION['user'];
+	
+	// match user email to rest of the user's information
+	$query = " SELECT * FROM users WHERE email = '$email' ";
+	$result = mysqli_query($con, $query);
+
+	$row = mysqli_fetch_array($result);
+	$fname = $row[2];
+	$lname = $row[3];
+	
+	
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +70,41 @@
 	<!----Main page area---->
 	<!---------------------->
 	<main>
-		<p></p>
+		<p>
+			<div class="wrapper2">
+				<div class="left">
+					<h4>
+						<?php 
+							echo ($fname.' '.$lname);
+						?>
+					</h4>
+					 <p>Flip Book User</p>
+				</div>
+				<div class="right">
+					<div class="info">
+						<h3>Information</h3>
+						<div class="info_data">
+							 <div class="data">
+								<h4>First Name</h4>
+								<p>
+									<?php 
+										echo ($fname);
+									?>
+								</p>
+								<h4>Last Name</h4>
+								<p>
+									<?php 
+										echo ($fname);
+									?>
+								</p>
+							 </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		
+		</p>
 	</main>
 
 

@@ -99,7 +99,7 @@
 		<div style="color:black; text-align: center; font-size: 70%">
 			<br><br>
 			<?php
-				$con = mysqli_connect('localhost','root','root1234');
+				$con = mysqli_connect('localhost','root','');
 				mysqli_select_db($con, 'flipbook');
 
 				//variables
@@ -122,6 +122,7 @@
 						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
 						while ($row = mysqli_fetch_array($query)) {
 
+
 							// Assigning variables to store data
 							$bookid = $row['bookid'];
 							$bookTitle = $row['bookTitle'];
@@ -132,8 +133,15 @@
 							$classNum = $row['classNum'];
 							$price = $row['price'];
 							$img = $row['img'];
+							
+							
+							$_SESSION['bookid'] = $bookid;
+							
+							//Retrieving postuser name
+							
+								
 
-							$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
+							$img_output = '<a href = "bookdetails.php"><img width="100px" height="120px" src="images/'.$img.'" /></a>';
 							//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
 
 							echo 	"<tr>
@@ -155,7 +163,7 @@
 				}
 			?>
 			<?php
-				$con = mysqli_connect('localhost','root','root1234');
+				$con = mysqli_connect('localhost','root','');
 				mysqli_select_db($con, 'flipbook');
 
 				//variables
@@ -179,7 +187,9 @@
 						while ($row = mysqli_fetch_array($query)) {
 
 							// Assigning variables to store data
-							$bookid = $row['bookid'];
+							$bookid = $_row['bookid'];
+							
+							$_SESSION['bookid'] = $bookid; 
 							$bookTitle = $row['bookTitle'];
 							$author = $row['author'];
 							$ISBN = $row['ISBN'];

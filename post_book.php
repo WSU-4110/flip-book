@@ -18,7 +18,7 @@ $price = $_POST['price'];
 $img = $_POST['img'];
 $date = 'CURDATE()';
 
-$reg = "INSERT into posts (email, bookTitle, author, ISBN, edition, subject, classNum, price, img, postdate) VALUES ('$email', '$bookTitle', '$author', '$ISBN', '$edition', '$subject', '$classNum', '$price', '$img', $date)";
+$reg = "INSERT into posts (bookid, email, bookTitle, author, ISBN, edition, subject, classNum, price, img, postdate) VALUES (NULL, '$email', '$bookTitle', '$author', '$ISBN', '$edition', '$subject', '$classNum', '$price', '$img', $date)";
 
 if(mysqli_query($con, $reg)) {
 	$_SESSION['valid_post'] = true;

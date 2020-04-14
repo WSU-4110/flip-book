@@ -138,7 +138,8 @@
 				}
 			}
 				
-			$output .= '<h1><center><strong>Book Details</strong></center></h1>
+			
+			echo '<h1><center><strong>Book Details</strong></center></h1>
 							
 							
 			<style>
@@ -156,14 +157,15 @@
 			tr:nth-child(even) {
 			background-color: #F0F0F0;
 			}
-			</style>
+						
+			</style>';
 					
-			<table>
-				<tr>
-				<th><h2><center>Book</center></h2></th>
-				<th><h2><center>Details</center></h2></th>
-				<th><h2><center>Purchase</center></h2></th>
-				</tr>
+				echo '<table>';
+				echo '<tr>
+					<th><h2><center>Book</center></h2></th>
+					<th><h2><center>Details</center></h2></th>
+					<th><h2><center>Purchase</center></h2></th>
+					</tr>
 				<tr>
 					<td><center><img width="300px" height="350px" src="images/'.$img.'" /></center></td>
 					<td>
@@ -177,16 +179,20 @@
 						<div> <b>Class Number: </b>'.$classNum.'</div>
 						<div> <b>Price: </b>'.$price.'</div>
 						</h2>
-					</td>				
-					<td>
-						<form action='addToCart.php' method='post'>
-						<input type='hidden' name='specificBook' value='".$bookid."'>
-						<td><input type='submit' value='Add to Cart'>
+					</td>
+					';
+					echo 
+					"<td>
+					<form action='addToCart.php' method='post'>
+						<center><input type='hidden' id = 'add' name='specificBook' value='".$bookid."'>
+						<input type='submit' value='Add to Cart'></button>
 						</form>
 					</td>
-				</tr>
-			</table>'; 		
-			print($output);
+					</tr>";
+
+				echo'</table>'; 
+						
+		
 		}
 		else{
 			$output = "No details found. ";

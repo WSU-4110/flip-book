@@ -110,6 +110,7 @@
 					echo '<div class="cart_item_frame">';
 						//grab the bookid of the current row
 						$bookid = $row['bookid'];
+						$_SESSION['bookidCheckout'] = $bookid;
 						//query the posts table for that bookid
 						$aBook = mysqli_query($con,"SELECT * FROM posts WHERE bookid LIKE '%$bookid%'");
 						$details = mysqli_fetch_array($aBook);
@@ -132,7 +133,11 @@
 						</div>
 						<div class="column">
 							<div class="buttons">
-								<p id="contact_seller"><button style="font-size: 18px">Contact seller</button></p>
+								<form action="contactSeller.php" method="post">
+	
+									<input type = "submit" id ="submitbtn" value="Contact Seller">
+									
+								</form>
 								<p id="remove_book">
 									<form action="removeFromCart.php" method="post">
 											<input type="hidden" name="specificBook" value="'.$bookid.'">
@@ -146,12 +151,3 @@
 			}
 		?>
 	</div>
-
-	<!---------------------->
-	<!--------Footer-------->
-	<!---------------------->
-	<footer>
-		<p id="copyright">&copy; 2020, Flip Book, Inc.</p>
-	</footer>
-</body>
-</html>

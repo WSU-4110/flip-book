@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 aside {
 	background: rgba(255, 255, 255, 0.95);
 	width: 15%;
@@ -7,7 +8,6 @@ aside {
 	border: 1px solid black;
 	float: left;
 }
-
 main {
 	background: rgba(255, 255, 255, 0.95);
 	margin-left: 18%;
@@ -16,7 +16,6 @@ main {
 	height: 34.5em;
 	border: 0.5px solid black;
 }
-
 aside p {
 	font-family: Cambria;
 }
@@ -27,53 +26,83 @@ aside p {
 	font-size: 120%;
 }
 
-.wrapper2{
+#categories {
+	list-style-type: none;
+	font-size: 95%;
+	text-decoration: underline;
+}
+#listings {
+	text-align: center;
+	font-size: 60%;
+	color: black;
+}
+
+/*Profile Page*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+   background-color: #green;
+}
+
+.wrapper{
   position: absolute;
-  top: 50%;
+  top: 35%;
+  bottom: 75%;
   left: 50%;
+  right: 70%;
   transform: translate(-50%,-50%);
-  width: 450px;
+  width: 700px;
+  height:300px;
   display: flex;
   box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
 }
 
-.wrapper2 .left{
-  width: 35%;
+.wrapper .left{
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,#cbf7c7,#ffeb7a);
   padding: 30px 25px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   text-align: center;
-  color: #fff;
+  color: black;
 }
 
-.wrapper2 .left img{
+.wrapper .left img{
   border-radius: 5px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.wrapper .left h4{
   margin-bottom: 10px;
 }
 
-.wrapper2 .left h4{
-  margin-bottom: 10px;
-}
-
-.wrapper2 .left p{
+.wrapper .left p{
   font-size: 12px;
 }
 
-.wrapper2 .right{
-  width: 65%;
+.wrapper .right{
+  width: 85%;
   background: #fff;
-  padding: 30px 25px;
+  padding: 50px 30px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.wrapper2 .right .info,
-.wrapper2 .right .listings{
+.wrapper .right .info,
+.wrapper .right .projects{
   margin-bottom: 25px;
 }
 
-.wrapper2 .right .info h3,
-.wrapper2 .right .listings h3{
+.wrapper .right .info h3,
+.wrapper .right .projects h3{
     margin-bottom: 15px;
     padding-bottom: 5px;
     border-bottom: 1px solid #e0e0e0;
@@ -82,27 +111,74 @@ aside p {
   letter-spacing: 5px;
 }
 
-.wrapper2 .right .info_data,
-.wrapper2 .right .listings_data{
+.wrapper .listings  h3{
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #353c4e;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+
+.wrapper .right .info_data,
+.wrapper .right .projects_data
+
+{
   display: flex;
   justify-content: space-between;
 }
 
-.wrapper2 .right .info_data .data,
-.wrapper2 .right .listings_data .data{
+.wrapper .right .info_data .data,
+.wrapper .right .projects_data .data{
   width: 45%;
 }
 
-.wrapper2 .right .info_data .data h4,
-.wrapper2 .right .listings_data .data h4{
+.wrapper .right .info_data .data h4,
+.wrapper .right .projects_data .data h4{
     color: #353c4e;
     margin-bottom: 5px;
 }
 
-.wrapper2 .right .info_data .data p,
-.wrapper2 .right .listings_data .data p{
+.wrapper .right .info_data .data p,
+.wrapper .right .projects_data .data p{
   font-size: 13px;
   margin-bottom: 10px;
   color: #919aa3;
 }
 
+.contactform input[type=password], password {
+  width: 15%; 
+  padding: 10px;  
+  border: 1px solid #ccc; 
+  border-radius: 20px; 
+  box-sizing: border-box; 
+  margin-top:100px; 
+  margin-bottom: 10px; 
+  resize: vertical
+}
+
+
+
+/* Submit button*/
+.contactform input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a yellow color */
+.contactform input[type=submit]:hover {
+  background-color: #FFD700;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+  border-radius: 30px;
+  background-color: white;
+  padding: 5px;
+  width: 50%;
+}

@@ -58,9 +58,9 @@
 			        <input type="text" class="input-area" name="lname" required> <br>
 					
 			        <label id="email"><b>Email Address: </b></label>
-			        <input type="text" class="input-area" name="email" required> <br>
+			        <input type="text" class="input-area" name="email" required> <br> <br> <br>
 					
-					<label id="secQ"><b>Security Question: Who was your childhood best friend?</b></label>
+					<label id="secQ"><b>Security Question: Who was your childhood best friend?</b></label><br>
 					
 					<label id="secAns"><b>Security Answer: </b></label>
 			        <input type="text" class="input-area" name="secAns" required> <br>

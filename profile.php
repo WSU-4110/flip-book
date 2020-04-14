@@ -2,7 +2,7 @@
 	session_start();
 	
 	// connecting to host via phpmyadmin
-	$con = mysqli_connect('localhost','root','root1234');
+	$con = mysqli_connect('localhost','root','');
 
 	// selecting youtube database from connection
 	mysqli_select_db($con, 'flipbook');
@@ -140,6 +140,19 @@
 									<?php 
 										echo ($email);
 									?>
+								</p>
+								<h4>Change Password</h4>
+								<p>
+									<form action="changePassAccount.php" method="post">
+
+											<label id="password1"><b>Password: </b></label>
+											<input type="password" class="input-area" name="password" required> <br>
+
+											<label id="password2"><b>Confirm Password: </b></label>
+											<input type="password" class="input-area" name="password2" required> <br>
+
+											<button type="submit">Change Password</button>
+									</form>
 								</p>
 						  </div>
 						</div>

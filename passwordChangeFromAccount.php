@@ -47,21 +47,12 @@
 	<!---------------------->
 
 	<main id="signup-main">
-		<form action="registration.php" method="post">
+		<form action="passChangeFromAccFunc.php" method="post">
 
-				<center><h1>Register for an account with Flip Book!</h1></center>
-
-					<label id="fname"><b>First Name: </b></label>
-			        <input type="text" class="input-area" name="fname" required> <br>
-					
-					<label id="lname"><b>Last Name: </b></label>
-			        <input type="text" class="input-area" name="lname" required> <br>
-					
-			        <label id="email"><b>Email Address: </b></label>
-			        <input type="text" class="input-area" name="email" required> <br> <br> <br>
+				<center><h1>Change Password</h1></center>
 					
 					<label id="secQ"><b>Security Question: </b></label>
-					<input type="text" class="input-area" name="secQ" value="Who was your childhood best friend?" readonly> <br>
+					<input type="text" class="input-area" name="secQ" value="Who was your childhood best friend?" readonly> <br>			
 					
 					<label id="secAns"><b>Security Answer: </b></label>
 			        <input type="text" class="input-area" name="secAns" required> <br>
@@ -72,12 +63,10 @@
 			        <label id="password2"><b>Confirm Password: </b></label>
 		        	<input type="password" class="input-area" name="password2" required> <br>
 						
-					<button type="submit">Sign In</button>
+					<button type="submit">Submit</button>
 					
 					
 		</form>
-
-		<p class="account-status" >Already have an account? <a href="login.php"><u>Login here!</u></a></p>
 	</main>
 	
 

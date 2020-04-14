@@ -21,15 +21,8 @@
 	<nav>
 		<ul class="navigation">
 			<!---Flip Book Logo--->
-			<li><a href="main.php"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
+			<li><a href="signUpPage.php"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
 			
-			<!---Searchbar--->
-			<!---<li>
-				<form id="searchbox" action="">
-					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-					<a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
-				</form>
-			</li> --->
 		
 			<!---Menu items--->
 			<div>
@@ -47,37 +40,28 @@
 	<!---------------------->
 
 	<main id="signup-main">
-		<form action="registration.php" method="post">
+		<form action="forgotPassFunc.php" method="post">
 
-				<center><h1>Register for an account with Flip Book!</h1></center>
+				<center><h1>Forgot your Password?</h1></center>
+					<p> Log in to your account by answering your security question </p>
+					
+					<label id="email"><b>Email Address: </b></label>
+			        <input type="email" class="input-area" name="email" required> <br>
 
-					<label id="fname"><b>First Name: </b></label>
-			        <input type="text" class="input-area" name="fname" required> <br>
-					
-					<label id="lname"><b>Last Name: </b></label>
-			        <input type="text" class="input-area" name="lname" required> <br>
-					
-			        <label id="email"><b>Email Address: </b></label>
-			        <input type="text" class="input-area" name="email" required> <br> <br> <br>
-					
 					<label id="secQ"><b>Security Question: </b></label>
 					<input type="text" class="input-area" name="secQ" value="Who was your childhood best friend?" readonly> <br>
 					
 					<label id="secAns"><b>Security Answer: </b></label>
 			        <input type="text" class="input-area" name="secAns" required> <br>
 
-			        <label id="password1"><b>Password: </b></label>
-			        <input type="password" class="input-area" name="password" required> <br>
-
-			        <label id="password2"><b>Confirm Password: </b></label>
-		        	<input type="password" class="input-area" name="password2" required> <br>
 						
-					<button type="submit">Sign In</button>
+					<button type="submit">Submit</button>
 					
 					
 		</form>
 
 		<p class="account-status" >Already have an account? <a href="login.php"><u>Login here!</u></a></p>
+		<p class="account-status" >Sign up <a href="signUpPage.php"><u>Create an account!</u></a></p>
 	</main>
 	
 

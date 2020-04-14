@@ -61,7 +61,7 @@
     </form>
 
     <p class="account-status" >Don't have an account? <a href="signUpPage.html"><u>Register here!</u></a></p>
-	<p class="account-status" >Forgot your password? <a href="changePassword.php"><u>Change Password</u></a></p>
+	<p class="account-status" >Forgot your password? <a href="forgotPass.php"><u>Click here!</u></a></p>
 	
   </main>
 

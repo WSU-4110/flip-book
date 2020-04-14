@@ -1,8 +1,6 @@
-<!DOCTYPE html>
 <?php
 	session_start();
 	
-		
 	// connecting to host via phpmyadmin
 	$con = mysqli_connect('localhost','root','');
 
@@ -11,24 +9,60 @@
 	
 	$email = $_SESSION['user'];
 	
-	// match user email to rest of the user's information
+	$date = 'CURDATE()';
+	
+	// match user to user info
 	$query = " SELECT * FROM users WHERE email = '$email' ";
 	$result = mysqli_query($con, $query);
-
+	
 	$row = mysqli_fetch_array($result);
 	$fname = $row[2];
 	$lname = $row[3];
+	
+	
+	// check if user posted any books
+	$userQuery = " SELECT email FROM posts WHERE email = '$email' ";
+	$userResult = mysqli_query($con, $userQuery);
+	$count = mysqli_num_rows($userResult); 
+	
+	if ($count == 0) {
+		echo ("You have not posted anything yet.");
+	}
+	else {
+		
+		// fetch user's recent listings
+		$sql = " SELECT MAX(postdate) from posts WHERE email = '$email' ";
+		$sql_result = mysqli_query($con, $sql);
+		
+		$daterow = mysqli_fetch_array($sql_result);
+		$recentListing = $daterow[0];
+		
+		// fetch information pretaining the most recent date
+		$sql2 = " SELECT * from posts WHERE email = '$email' AND postdate = $date ORDER BY $date DESC LIMIT 1 ";
+		$sql_result2 = mysqli_query($con, $sql2);
+		
+		$recentBook = mysqli_fetch_array($sql_result2);
+		$recentBookId = $recentBook[0];
+		$recentBookTitle = $recentBook[2];
+		$recentBookAuthor = $recentBook[3];
+	}
+
+	
+	
+	
+	
+	
 ?>
+
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Welcome - Flip Book</title>
 	<link rel="icon" type="image/png" href="images/flipbook_logo.png" />
 	<meta name="viewport" content="width=device-width, intial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="layout.css">
-	<link rel="stylesheet" type="text/css" href="profile_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
 </head>
 
 <body>
@@ -38,22 +72,21 @@
 	<nav>
 		<ul class="navigation">
 			<!---Flip Book Logo--->
-			<li><a href="main.php"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
+			<li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
 			
 			<!---Searchbar--->
 			<li>
-				<form id="searchbox" action="main.php" method="post">
-					<input id="search_bar" name="search" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-					<input type="submit" value="search">
+				<form id="searchbox" action="">
+					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+					<a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
 				</form>
 			</li>
 
 
 			<!--Icons-->
-			<li class="icons"><a href="logout.php" onclick="return confirm('Are you sure you want to logout?');"><i class="fa fa-sign-out" style="font-size:150%;color:red"></i></a></li>
-			<li class="icons"><a href="profile.php"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
-			<li class="icons"><a href="checkout.php"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
-			<li class="icons"><a href="post.php"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="profile.html"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="post.html"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
 
 		
 			<!---Menu items--->
@@ -62,59 +95,16 @@
 				<br>
 				<br>
 				<li id="menu-about"><a id="about" href="About.html">About Us</a></li>
-				<li id="menu-contact"><a id="contact" href="ContactUs.php">Contact Us</a></li>
+				<li id="menu-contact"><a id="contact" href="ContactUs.html">Contact Us</a></li>
 			</div>
 		</ul>
 	</nav>
-
-
-	<!---------------------->
-	<!--Aside (Categories)-->
-	<!---------------------->
-	<aside>
-		<p id="aside_title">Categories</p>
-		<form action="main.php" method="post">
-			<select name="category">
-				<option value="Accounting">Accounting</option>
-				<option value="Art">Art</option>
-				<option value="Biology">Biology</option>
-				<option value="Calculus">Calculus</option>
-				<option value="Chemistry">Chemistry</option>
-				<option value="Computer Science">Computer Science</option>
-				<option value="Criminal Justice">Criminal Justice</option>
-				<option value="Dance">Dance</option>
-				<option value="Economics">Economics</option>
-				<option value="Education">Education</option>
-				<option value="Engineering">Engineering</option>
-				<option value="Environmental Science">Environmental Science</option>
-				<option value="History">History</option>
-				<option value="Journalism">Journalism</option>
-				<option value="Languages">Languages</option>
-				<option value="Law">Law</option>
-				<option value="Management">Management</option>
-				<option value="Medicine">Medicine</option>
-				<option value="Music">Music</option>
-				<option value="Nursing">Nursing</option>
-				<option value="Pharmacy">Pharmacy</option>
-				<option value="Philosophy">Philosophy</option>
-				<option value="Political Science">Political Science</option>
-				<option value="Psychology">Psychology</option>
-				<option value="Sociology">Sociology</option>-
-			</select>
-			<input type="submit" value="Submit">
-  			
-		</form>
-
-
-	</aside>
-
 
 	<!---------------------->
 	<!----Main page area---->
 	<!---------------------->
 	<main>
-	<center>
-		
+		<p>
 			<div class="wrapper">
 				<div class="left">
 					<img src="https://i.imgur.com/cMy8V5j.png" 
@@ -151,19 +141,32 @@
 										echo ($email);
 									?>
 								</p>
+								<h4>Change Password</h4>
+								<p>
+									<form action="changePassAccount.php" method="post">
+
+											<label id="password1"><b>Password: </b></label>
+											<input type="password" class="input-area" name="password" required> <br>
+
+											<label id="password2"><b>Confirm Password: </b></label>
+											<input type="password" class="input-area" name="password2" required> <br>
+
+											<button type="submit">Change Password</button>
+									</form>
+								</p>
 						  </div>
 						</div>
 					</div>
-								
+				  
 				  <div class="listings">
 						<h3>My Listings</h3>
 						<div class="listings_data">
 						
 							 <div class="data">
 							 
-								<h4>Recent</h4>
+								<h4>Most Recent Listing</h4>
 								<p>
-										<!---<?php 
+									<?php 
 									
 										if ($count == 0) {
 											echo ("You have not posted anything yet.");
@@ -176,7 +179,7 @@
 										}
 									
 										
-									?>--->
+									?>
 								</p>
 								
 							 </div>
@@ -206,31 +209,8 @@
 			</div>
 		
 		
-		</div>
-		</center>
+		</p>
 	</main>
-	
-		<!---<div class = "container">
-		<div class = "contactform">
-			<h4>Change Password</h4>
-								<p>
-									<form action="changePassAccount.php" method="post">
-
-											<label id="password1"><b>Password: </b></label>
-											<input type="password" class="input-area" name="password" required> <br>
-
-											<label id="password2"><b>Confirm Password: </b></label>
-											<input type="password" class="input-area" name="password2" required> <br>
-
-											<input type = "submit" value = "Change Password" id = "mySubmit">
-									</form>
-								</p>
-								<br>
-								<br>
-		</div>
-		</div>
-	
-		
 
 
 	<!---------------------->
@@ -244,11 +224,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-

@@ -44,7 +44,7 @@
 				<br>
 				<br>
 				<br>
-				<li id="menu-about"><a id="about" href="About.html">About Us</a></li>
+				<li id="menu-about"><a id="about" href="About.php">About Us</a></li>
 				<li id="menu-contact"><a id="contact" href="ContactUs.php">Contact Us</a></li>
 			</div>
 		</ul>
@@ -58,6 +58,7 @@
 		<p id="aside_title">Categories</p>
 		<form action="main.php" method="post">
 			<select name="category">
+				<option value="default" disabled selected>Select a category</option>
 				<option value="Accounting">Accounting</option>
 				<option value="Art">Art</option>
 				<option value="Biology">Biology</option>
@@ -99,7 +100,7 @@
 		<div style="color:black; text-align: center; font-size: 70%">
 			<br><br>
 		<?php
-			$con = mysqli_connect('localhost','root','') or die("Could not connect");
+			$con = mysqli_connect('localhost','root','root1234') or die("Could not connect");
 			mysqli_select_db($con, 'flipbook') or die(mysqli_error($con));
 			$output = '';
 
@@ -147,8 +148,8 @@
 			font-family: arial, sans-serif;
 			border-collapse: collapse;
 			width: 80%;
+			margin-left: 10em;
 			}
-
 			td, th {
 			border: 2px solid black;
 			text-align: left;
@@ -216,11 +217,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-

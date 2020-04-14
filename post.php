@@ -33,8 +33,8 @@ session_start();
 
 			<!--Icons-->
 			<li class="icons"><a href="logout.php" onclick="return confirm('Are you sure you want to logout?');"><i class="fa fa-sign-out" style="font-size:150%;color:red"></i></a></li>
-			<li class="icons"><a href="profile.html"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
-			<li class="icons"><a href="checkout.html"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="profile.php"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
+			<li class="icons"><a href="checkout.php"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="post.php"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
 
 		
@@ -43,7 +43,7 @@ session_start();
 				<br>
 				<br>
 				<br>
-				<li id="menu-about"><a id="about" href="About.html">About Us</a></li>
+				<li id="menu-about"><a id="about" href="About.php">About Us</a></li>
 				<li id="menu-contact"><a id="contact" href="ContactUs.php">Contact Us</a></li>
 			</div>
 		</ul>
@@ -58,6 +58,7 @@ session_start();
 		<p id="aside_title">Categories</p>
 		<form id="form_categories" action="main.php" method="post">
 			<select name="category">
+				<option value="default" disabled selected>Select a category</option>
 				<option value="Accounting">Accounting</option>
 				<option value="Art">Art</option>
 				<option value="Biology">Biology</option>

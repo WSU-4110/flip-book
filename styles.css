@@ -1,7 +1,7 @@
 aside {
 	background: rgba(255, 255, 255, 0.95);
 	width: 15%;
-	height: 34.5em;
+	height: 34em;
 	margin-left: 1%;
 	margin-top: 1%;
 	border: 1px solid black;
@@ -13,7 +13,7 @@ main {
 	margin-left: 18%;
 	margin-top: 1%;
 	width: 81%;
-	height: 34.5em;
+	height: 34em;
 	border: 0.5px solid black;
 }
 
@@ -44,6 +44,7 @@ aside p {
 }
 
 
+
 /*************************/
 /******Checkout page******/
 /*************************/
@@ -55,7 +56,6 @@ aside p {
 	height: 34em;
 	margin-top: 1%;
 	border: 1px solid black;
-	overflow: auto;
 }
 
 #aside_checkout {
@@ -204,4 +204,32 @@ aside p {
 	margin-left: 50px;
 	font-size: 120%;
 }
+
+
+/********************************/
+/******Seller listings page******/
+/********************************/
+#seller-listings {
+  font-size: 1.50em;
+  color: #25701d;
+}
+
+#seller-listings td {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+#confirm-seller-transaction {
+  height: 2.5em;
+  font-size: 0.75em;
+  font-weight: bold;
+  background-color: #f7d340;
+}
+
+h1 {
+  color: #25701d;
+}
+
 

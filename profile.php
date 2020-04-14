@@ -3,7 +3,7 @@
 	session_start();
 	
 	// connecting to host via phpmyadmin
-	$con = mysqli_connect('localhost','root','');
+	$con = mysqli_connect('localhost','root','root1234');
 
 	// selecting youtube database from connection
 	mysqli_select_db($con, 'flipbook');
@@ -79,6 +79,7 @@
 		<p id="aside_title">Categories</p>
 		<form action="main.php" method="post">
 			<select name="category">
+				<option value="default" disabled selected>Select a category</option>
 				<option value="Accounting">Accounting</option>
 				<option value="Art">Art</option>
 				<option value="Biology">Biology</option>
@@ -126,8 +127,7 @@
 
 			<div class="wrapper">
 				<center><div style="float: left; margin-left: 20em">
-					<img src="https://i.imgur.com/cMy8V5j.png" 
-					alt="user" width="100">
+					<p><i class="fa fa-user-circle" style="font-size:500%; color:#f7d340;"></i></p>
 						<?php 
 							echo '<h4>'.$fname.' '.$lname.'</h4><h4>'.$email.'</h4>';
 
@@ -184,8 +184,8 @@
 												$recentBookTitle = $recentBook['bookTitle'];
 												$recentBookAuthor = $recentBook[3];
 
-												echo ("<font color = 'black'><b>Date: </b></font>".$recentListing.' ');
-												echo ("<font color = 'black'><b>Title: </b></font>".$recentBookTitle.' '); 
+												echo ("<font color = 'black'><b>Date: </b></font>".$recentListing.'<br>');
+												echo ("<font color = 'black'><b>Title: </b></font>".$recentBookTitle.'<br>'); 
 												echo ("<font color = 'black'><b>Author: </b></font>".$recentBookAuthor.'<br>'); 
 										
 											}

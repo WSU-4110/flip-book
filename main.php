@@ -44,7 +44,7 @@
 				<br>
 				<br>
 				<br>
-				<li id="menu-about"><a id="about" href="About.html">About Us</a></li>
+				<li id="menu-about"><a id="about" href="About.php">About Us</a></li>
 				<li id="menu-contact"><a id="contact" href="ContactUs.php">Contact Us</a></li>
 			</div>
 		</ul>
@@ -58,6 +58,7 @@
 		<p id="aside_title">Categories</p>
 		<form action="main.php" method="post">
 			<select name="category">
+				<option value="default" disabled selected>Select a category</option>
 				<option value="Accounting">Accounting</option>
 				<option value="Art">Art</option>
 				<option value="Biology">Biology</option>
@@ -99,25 +100,32 @@
 		<div style="color:black; text-align: center; font-size: 70%">
 			<br><br>
 			<?php
-				$con = mysqli_connect('localhost','root','');
+				$con = mysqli_connect('localhost','root','root1234');
 				mysqli_select_db($con, 'flipbook');
 
 				//variables
 				$output = '';
 				$img_output = '';
 
+				if(!isset($_POST['search'])) {
+					echo '<h1>Search for a book using the searchbar or categories filter!</h1>';
+				}
+
 				//if else statement to check whether search matches anything in database
 				if(isset($_POST['search'])) {
 					$searchq = $_POST['search'];
 
-					$query = mysqli_query($con,"SELECT * FROM posts WHERE bookTitle LIKE '%$searchq%'") or die("Could not search!");
+					$query = mysqli_query($con,"SELECT * FROM posts WHERE bookTitle LIKE '%$searchq%' OR author LIKE '%$searchq%' OR subject LIKE '%$searchq%' OR ISBN LIKE '%$searchq%'") or die("Could not search!");
 					$count = mysqli_num_rows($query);
+					
 
 					if($count == 0) {
 						// if no search results are found in database
 						$output .= '<h2>'.'No search results!'.'</h2>';
 					}
 					else {
+						$limit = 9;
+						$counter = 0;
 						// returning data if search is successful
 						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
 						while ($row = mysqli_fetch_array($query)) {
@@ -133,37 +141,47 @@
 							$classNum = $row['classNum'];
 							$price = $row['price'];
 							$img = $row['img'];
-							
-							
 							$_SESSION['bookid'] = $bookid;
-							
-							//Retrieving postuser name
-							
-								
 
 							$img_output = '<a href = "bookdetails.php"><img width="100px" height="120px" src="images/'.$img.'" /></a>';
-							//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
 
-							echo 	"<tr>
-										<td>$img_output
-									<tr>
-										<td>$bookTitle										
-									<tr>
-										<td>$author
-									<tr>
-										<td>$$price
-									<tr>
-										<form action='addToCart.php' method='post'>
+							if($counter < $limit) {
+								if($counter == 0){
+									
+									echo "<tr>";
+								}
+								echo "<td>$img_output
+									<br>$bookTitle
+									<br>$author
+									<br>$$price
+									<br><form action='addToCart.php' method='post'>
 											<input type='hidden' name='specificBook' value='".$bookid."'>
-											<td><input type='submit' value='Add to Cart'>
-										</form>";
+											<br><input type='submit' value='Add to Cart'>
+										</form>
+									</td>";
+								
+							}
+							else {
+								$counter = 0;
+								echo "</tr><tr>
+								<td>$img_output
+									<br>$bookTitle
+									<br>$author
+									<br>$$price
+									<br><form action='addToCart.php' method='post'>
+											<input type='hidden' name='specificBook' value='".$bookid."'>
+											<br><input type='submit' value='Add to Cart'>
+										</form>
+									</td>";
+							}
+							$counter++;
 						}
-						echo '</table>';
+						echo "</tr></table>";
 					}
 				}
 			?>
 			<?php
-				$con = mysqli_connect('localhost','root','');
+				$con = mysqli_connect('localhost','root','root1234');
 				mysqli_select_db($con, 'flipbook');
 
 				//variables

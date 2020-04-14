@@ -1,16 +1,17 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
+<?php
+	session_start()
+?>
 <html>
 <head>
-	<title>Flip Book</title>
+	<title>Welcome - Flip Book</title>
 	<link rel="icon" type="image/png" href="images/flipbook_logo.png" />
 	<meta name="viewport" content="width=device-width, intial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="layout.css">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -24,9 +25,9 @@ session_start();
 			
 			<!---Searchbar--->
 			<li>
-				<form id="searchbox" action="">
-					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-					<a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
+				<form id="searchbox" action="main.php" method="post">
+					<input id="search_bar" name="search" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+					<input type="submit" value="search">
 				</form>
 			</li>
 
@@ -36,7 +37,6 @@ session_start();
 			<li class="icons"><a href="profile.php"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="checkout.php"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="post.php"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
-		
 
 		
 			<!---Menu items--->
@@ -52,7 +52,7 @@ session_start();
 
 
 	<!---------------------->
-	<!--------Aside--------->
+	<!--Aside (Categories)-->
 	<!---------------------->
 	<aside>
 		<p id="aside_title">Categories</p>
@@ -92,40 +92,85 @@ session_start();
 
 	</aside>
 
-	<main>
-			<center><h2>Have any questions?</h2></center>
-			
-			<center><p>All fields must be filled to successfully submit the form.</p></center>
-			<div class = "container">
-			<form action = "inquiries.php" method = "POST"> 
-				<div class = "contactform">
-					<strong>
-					<label for = "myFName"> First Name: </label>
-					<input type = "text" name= "myFName" required = "required"> <br>
-					<label for = "myLName"> Last Name: </label>
-					<input type = "text" name = "myLName" required = "required"> <br>
-					<label for = "myEmail"> E-mail: </label>
-					<input type = "email" name = "myEmail" required = "required"> <br>	
-					<label for = "myComment"> What can we help you with?: </label>
-					<textarea type = "text" cols = "20" rows = "2" name = "myComment" required></textarea>
-					<input type = "submit" value = "Submit" id = "mySubmit">
-					</strong>
-				</div>
-			</form>
-			</div>
-			<?php
-		        if(isset($_SESSION['valid_inquiry']) && $_SESSION['valid_inquiry'] == true) {
-		        	echo "<p style='color:#25701d' align='center'>Thank you for reaching out! We will respond to you as soon as possible.</p>";
-		        	$_SESSION['valid_password'] = null;
-		        }
-			?>
 
-			<?php
-		        if(isset($_SESSION['valid_inquiry']) && $_SESSION['valid_inquiry'] == false) {
-		        	echo "<p style='color:#25701d' align='center'>Error: message could not be sent!</p>";
-		        	$_SESSION['valid_password'] = null;
-		        }
-			?>
+	<!---------------------->
+	<!----Main page area---->
+	<!---------------------->
+	<main>
+		<div style="color:black; text-align: center; font-size: 70%">
+			<h1>My Listings</h1>
+			<br>
+
+			<center><table id="seller-listings" border="1px solid black">
+
+				<?php
+					$con = mysqli_connect('localhost','root','root1234');
+					mysqli_select_db($con, 'flipbook');
+
+					$email = $_SESSION['user'];
+
+					$query = mysqli_query($con, "SELECT * FROM posts where email = '$email' ");
+					$count = mysqli_num_rows($query);
+
+					if($count == 0) {
+						// if no search results are found in database
+						echo '<h2>No listings to display!</h2>';
+					}
+					else {
+						while($row = mysqli_fetch_array($query)) {
+							$bookid = $row['bookid'];
+							$bookTitle = $row['bookTitle'];
+
+							echo '<tr><td>Book ID: '.$bookid.'</td><td>'.$bookTitle.'</td><td>
+								<form action="seller_listings.php" method="post">
+									<input type="hidden" name="specificBook" value="'.$bookid.'">
+									<input type="submit" id="confirm-seller-transaction" value="Confirm transaction" name="confirm-seller-transaction">
+									</form></td></tr>';
+						}
+					}
+
+					if(isset($_POST['confirm-seller-transaction'])) {
+						$bookid = $_POST['specificBook'];
+						$reg = "INSERT into confirmseller (bookid, email) VALUES ('$bookid', '$email')";
+						mysqli_query($con, $reg);
+
+
+						$reg2 = mysqli_query($con, "SELECT * FROM confirmbuyer WHERE bookid = '$bookid'");
+						$count = mysqli_num_rows($reg2);
+						if($count > 0) {
+							$reg3 = "DELETE FROM cart WHERE bookid = '$bookid'";
+							$reg4 = "DELETE FROM posts WHERE bookid = '$bookid'";
+							$reg5 = "DELETE FROM confirmbuyer WHERE bookid = '$bookid'";
+							$reg6 = "DELETE FROM confirmseller WHERE bookid = '$bookid'";
+							mysqli_query($con,$reg3);
+							mysqli_query($con,$reg4);
+							mysqli_query($con,$reg5);
+							mysqli_query($con,$reg6);
+
+							$message = "";
+							$message = "Successful transaction!";
+							$output2="";
+							$output2 .= '<p style="font-size: 1.5em>'.$message.'</p>';
+							echo '<p style="font-size:20px">'.$message.'</p>';
+							
+						}
+						else {
+							$message = "";
+							$message = "Waiting on confirmation from buyer!";
+							$output3="";
+							$output3 .= '<p style="font-size: 1.5em>'. $message.'</p>';
+							echo '<p style="font-size:20px">'.$message.'</p>';
+						}
+					
+					}
+					
+				?>
+		
+			</table></center>
+
+			
+		
+		</div>
 	</main>
 
 	<!---------------------->
@@ -134,6 +179,8 @@ session_start();
 	<footer>
 		<p id="copyright">&copy; 2020, Flip Book, Inc.</p>
 	</footer>
+
+
 
 
 

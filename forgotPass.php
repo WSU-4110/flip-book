@@ -39,13 +39,13 @@
 	<!---------Main--------->
 	<!---------------------->
 
-	<main id="signup-main">
+	<main id="forgot-password-main">
 		<form action="forgotPassFunc.php" method="post">
 
 				<center><h1>Forgot your Password?</h1></center>
 					<p> Log in to your account by answering your security question </p>
 					
-					<label id="email"><b>Email Address: </b></label>
+					<label id="email"><b>Wayne State Email Address: </b></label>
 			        <input type="email" class="input-area" name="email" required> <br>
 
 					<label id="secQ"><b>Security Question: </b></label>

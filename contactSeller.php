@@ -6,7 +6,7 @@
 		
 		
 		// connecting to host via phpmyadmin
-		$con = mysqli_connect('localhost','root','');
+		$con = mysqli_connect('localhost','root','root1234');
 
 		if (!$con) {
 			echo'Not connected';
@@ -50,7 +50,7 @@
 	<nav>
 		<ul class="navigation">
 			<!---Flip Book Logo--->
-			<li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
+			<li><a href="main.php"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
 			
 			<!---Searchbar--->
 			<li>

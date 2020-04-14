@@ -31,13 +31,14 @@
         </form>
       </li>
     
-      <!---Menu items--->
+     <!---Menu items--->
       <div>
-        <br>
-        <br>
-        <br>
-		<li id="menu-about"><a id="about" href="About.html">About Us</a></li
-        <li id="menu-contact"><a id="contact" href="ContactUs.html">Contact Us</a></li>
+          <br>
+          <br>
+          <br>
+          <li id="menu-home"><a id="index-nav" href="index.php">Home</a></li>
+          <li id="menu-about"><a id="index-nav" href="about-index.php">About Us</a></li>
+          <li id="menu-contact"><a id="index-nav" href="ContactUs-index.php">Contact Us</a></li>
       </div>
     </ul>
   </nav>
@@ -49,9 +50,9 @@
   <main id="login-main">
     <form action="validation.php" method="post">
 
-        <center><h1>Login to your FlipBook account!</h1></center>
+        <center><h1>Login to your Flip Book account!</h1></center>
 
-              <label id="email"><b>Email Address: </b></label>
+              <label id="email"><b>Wayne State Email Address: </b></label>
               <input type="email" class="input-area" name="email" required> <br>
 
               <label id="password1"><b>Password: </b></label>
@@ -60,9 +61,10 @@
             <button type="submit">Sign In</button>
     </form>
 
-    <p class="account-status" >Don't have an account? <a href="signUpPage.html"><u>Register here!</u></a></p>
-	<p class="account-status" >Forgot your password? <a href="forgotPass.php"><u>Click here!</u></a></p>
-	
+    <p class="account-status" >Forgot your password? <a href="forgotPass.php"><u>Click here!</u></a></p>
+    <p class="account-status" >Don't have an account? <a href="signUpPage.php"><u>Register here!</u></a></p>
+  
+  
   </main>
 
 

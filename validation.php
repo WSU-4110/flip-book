@@ -9,6 +9,9 @@ mysqli_select_db($con, 'flipbook');
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+ $_SESSION['user'] = $email;
+
+
 $s = " select * from users where email = '$email' && password ='$password'";
 
 $result = mysqli_query($con, $s);
@@ -16,11 +19,11 @@ $result = mysqli_query($con, $s);
 $num = mysqli_num_rows($result);
 
 if($num == 1) {
-	$_SESSION['user'] = $email;
+	//$_SESSION['email'] = $email;
 	header('location:main.php');
 }
 else {
-	header('location:login.html');
+	header('location:login.php');
 }
 
 ?>

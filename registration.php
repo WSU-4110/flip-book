@@ -20,22 +20,40 @@ $result = mysqli_query($con, $s);
 
 $num = mysqli_num_rows($result);
 
-if($num == 1) {
+if($password != $password2){
+	$_SESSION['valid_password'] = false;
+	//echo "Passwords do not match!";
+	header('location:signUpPage.php');
+}
+else if($num == 1) {
+	$_SESSION['valid_email'] = false;
+	header("location:signUpPage.php");
+}
+else {
+	$reg = " insert into users (email, password, fname, lname, securityAns) values ('$email', '$password', '$fname', '$lname', '$answer')";
+	mysqli_query($con, $reg);
+	echo "Registration successful!";
+	header('location:login.php');
+}
+
+
+
+/*if($num == 1) {
+	$_SESSION['valid_email'] = true;
 	echo "Email is already in use.";
+	
 }
 else {
 	if ($password == $password2) {
-		$reg = " insert into users (email, password, fname, lname, securityAns) values ('$email', '$password', '$fname', '$lname', '$answer')";
+		$reg = " insert into users (email, password, fname, lname) values ('$email', '$password', '$fname', '$lname')";
 		mysqli_query($con, $reg);
 		echo "Registration successful!";
-		
 		header('location:login.php');
 	}
 	else {
 		echo"<script type='text/javascript'>alert('Passwords do not match.');</script>";
 		header("Refresh:0 url=signUpPage.php");
 	}
-
-}
+}*/
 
 ?>

@@ -1,5 +1,19 @@
-#signup-main, #login-main {
+#signup-main {
 	background: rgba(255, 255, 255, 0.95);
+    display: block;
+    text-align: center;
+    width: 50%;
+    height: 30em;
+    padding: 3%;
+    border-radius: 10px;
+    margin-left:22%;
+    margin-bottom: 0%;
+    margin-top: 0.3em;
+    
+}
+
+#login-main {
+  background: rgba(255, 255, 255, 0.95);
     display: block;
     text-align: center;
     width: 50%;
@@ -7,6 +21,39 @@
     border-radius: 10px;
     margin-left:22%;
     margin-top: 5%;
+  }
+
+ #change-password-main {
+  background: rgba(255, 255, 255, 0.95);
+    display: block;
+    text-align: center;
+    width: 50%;
+    height: 30%;
+    padding: 3%;
+    border-radius: 10px;
+    margin-left:22%;
+    margin-bottom: 0%;
+    margin-top: 5em;
+}
+
+ #forgot-password-main {
+  background: rgba(255, 255, 255, 0.95);
+    display: block;
+    text-align: center;
+    width: 50%;
+    height: 30%;
+    padding: 3%;
+    border-radius: 10px;
+    margin-left:22%;
+    margin-bottom: 0%;
+    margin-top: 1em;
+}
+
+
+
+#registration-title {
+  margin-top: 0%;
+  margin-bottom: 1%;
 }
 
 #welcome {

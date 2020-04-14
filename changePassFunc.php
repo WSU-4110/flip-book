@@ -32,7 +32,7 @@ else {
 	}
 	else {
 		echo"<script type='text/javascript'>alert('Wrong answer.');</script>";
-		header("Refresh:0 url=login.php");
+		header("Refresh:0 url=signUpPage.php");
 	}
 
 }

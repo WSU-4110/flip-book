@@ -60,35 +60,23 @@
 			        <label id="email"><b>Email Address: </b></label>
 			        <input type="text" class="input-area" name="email" required> <br>
 					
-				<!--Error message is displayed if email is already in use-->
-		        <?php
-		        	if(isset($_SESSION['valid_email']) && $_SESSION['valid_email'] == false) {
-		        		echo "<p style='color:green' align='center'>Inputted email address is already taken.</p>";
-		        		$_SESSION['valid_email'] = null;
-		        	}
-
-		        ?>
+					<label id="secQ"><b>Security Question: Who was your childhood best friend?</b></label>
+					
+					<label id="secAns"><b>Security Answer: </b></label>
+			        <input type="text" class="input-area" name="secAns" required> <br>
 
 			        <label id="password1"><b>Password: </b></label>
 			        <input type="password" class="input-area" name="password" required> <br>
 
 			        <label id="password2"><b>Confirm Password: </b></label>
 		        	<input type="password" class="input-area" name="password2" required> <br>
-					
-					 <!--Error message if passwords do not match-->
-		        <?php
-		        	if(isset($_SESSION['valid_password']) && $_SESSION['valid_password'] == false) {
-		        		echo "<p style='color:green' align='center'>Passwords do not match!</p>";
-		        		$_SESSION['valid_password'] = null;
-		        	}
-
-		        ?>
 						
-					<button type="submit">Sign Up!</button>
+					<button type="submit">Sign In</button>
+					
+					
 		</form>
-			
 
-		<p class="account-status" >Already have an account? <a href="login.html"><u>Login here!</u></a></p>
+		<p class="account-status" >Already have an account? <a href="login.php"><u>Login here!</u></a></p>
 	</main>
 	
 

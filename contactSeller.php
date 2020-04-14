@@ -17,7 +17,7 @@
 		 
 
 		// variables connected from html form
-		$bookid = $_POST['bookid'];
+		$bookid = $_SESSION['bookidCheckout'];
 
 		// match bookid to email
 		$query = " SELECT * FROM posts WHERE bookid = '$bookid' ";
@@ -61,6 +61,7 @@
 			</li>
 			
 			<!--Icons-->
+			<li class="icons"><a href="logout.php" onclick="return confirm('Are you sure you want to logout?');"><i class="fa fa-sign-out" style="font-size:150%;color:red"></i></a></li>
 			<li class="icons"><a href="profile.php"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="checkout.php"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="post.php"><i class="fa fa-plus" style="font-size:150%"></i></a></li>

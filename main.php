@@ -107,7 +107,7 @@
 				$output = '';
 				$img_output = '';
 
-				if(!isset($_POST['search'])) {
+				if(!isset($_POST['search']) AND !isset($_POST['category'])) {
 					echo '<h1>Search for a book using the searchbar or categories filter!</h1>';
 				}
 
@@ -200,12 +200,14 @@
 						$output .= '<h2>'.'No search results!'.'</h2>';
 					}
 					else {
+						$limit = 9;
+						$counter = 0;
 						// returning data if search is successful
 						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
 						while ($row = mysqli_fetch_array($query)) {
 
 							// Assigning variables to store data
-							$bookid = $_row['bookid'];
+							$bookid = $row['bookid'];
 							
 							$_SESSION['bookid'] = $bookid; 
 							$bookTitle = $row['bookTitle'];
@@ -217,25 +219,42 @@
 							$price = $row['price'];
 							$img = $row['img'];
 
-							$img_output = '<img width="100px" height="120px" src="images/'.$img.'" />';
-							//$output .= '<div><h2>'. $img_output . '<br>'. $bookTitle.'<br>By: '. $author.'<br>$'.$price . '</h2></div>';
+							$img_output = '<a href = "bookdetails.php"><img width="100px" height="120px" src="images/'.$img.'" /></a>';
 
-							echo 	"<tr>
-										<td>$img_output
-									<tr>
-										<td>$bookTitle										
-									<tr>
-										<td>$author
-									<tr>
-										<td>$$price
-									<tr>
-										<form action='addToCart.php' method='post'>
+							if($counter < $limit) {
+								if($counter == 0){
+									
+									echo "<tr>";
+								}
+								echo "<td>$img_output
+									<br>$bookTitle
+									<br>$author
+									<br>$$price
+									<br><form action='addToCart.php' method='post'>
 											<input type='hidden' name='specificBook' value='".$bookid."'>
-											<td><input type='submit' value='Add to Cart'>
-										</form>";
+											<br><input type='submit' value='Add to Cart'>
+										</form>
+									</td>";
+								
+							}
+							else {
+								$counter = 0;
+								echo "</tr><tr>
+								<td>$img_output
+									<br>$bookTitle
+									<br>$author
+									<br>$$price
+									<br><form action='addToCart.php' method='post'>
+											<input type='hidden' name='specificBook' value='".$bookid."'>
+											<br><input type='submit' value='Add to Cart'>
+										</form>
+									</td>";
+							}
+							$counter++;
 						}
-						echo '</table>';
+						echo "</tr></table>";
 					}
+					
 				}
 			?>		
 		</div>

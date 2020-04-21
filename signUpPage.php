@@ -52,7 +52,7 @@
 					<label id="lname"><b>Last Name: </b></label>
 			        <input type="text" class="input-area" name="lname" required> <br>
 
-			        <label id="email"><b>Wayne State Email Address: </b></label>
+			        <label id="email"><b>Email ending in "@wayne.edu": </b></label>
 			        <input type="text" class="input-area" name="email" pattern="[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[wayne]+\.[edu]{2,}$" required> <br>
 					<!--<input  required />-->
 					

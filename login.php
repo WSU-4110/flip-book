@@ -11,6 +11,7 @@
   <meta name="viewport" content="width=device-width, intial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="layout.css">
   <link rel="stylesheet" type="text/css" href="styles_nitisha.css">
+  <link rel="stylesheet" type="text/css" href="index-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -21,15 +22,9 @@
   <nav>
     <ul class="navigation">
       <!---Flip Book Logo--->
-      <li><a href="main.html"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
+      <li><a href="index.php"><img id="logo" src="images/flipbook_logo.png" width="150px" height="100px"></a></li>
       
-      <!---Searchbar--->
-      <li>
-        <form id="searchbox" action="">
-          <input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-          <a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
-        </form>
-      </li>
+    
     
      <!---Menu items--->
       <div>
@@ -51,6 +46,13 @@
     <form action="validation.php" method="post">
 
         <center><h1>Login to your Flip Book account!</h1></center>
+
+         <?php
+              if(isset($_SESSION['valid_login']) && $_SESSION['valid_login'] == false) {
+                echo "<p style='color:green' align='center'>Account does not exist!</p>";
+                $_SESSION['valid_login'] = null;
+              }
+          ?>
 
               <label id="email"><b>Wayne State Email Address: </b></label>
               <input type="email" class="input-area" name="email" required> <br>

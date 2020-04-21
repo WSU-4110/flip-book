@@ -23,6 +23,7 @@ if($num == 1) {
 	header('location:main.php');
 }
 else {
+	$_SESSION['valid_login'] = false;
 	header('location:login.php');
 }
 

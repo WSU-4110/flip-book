@@ -121,7 +121,7 @@
 						$ISBN = $details['ISBN'];
 						$price = $details['price'];
 						echo '<div class="column">
-							<a><img id="book_image" src="images/sampleTextBook.jpg"></a>
+							<img width="100px" height="120px" src="images/'.$img.'" />
 						</div>
 						<div class="column">
 							<p><b>Title:</b>'.$bookTitle.'</p>

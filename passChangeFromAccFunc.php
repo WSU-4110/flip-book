@@ -3,7 +3,7 @@
 session_start();
 
 
-$con = mysqli_connect('localhost','root','root1234');
+$con = mysqli_connect('localhost','root','');
 
 mysqli_select_db($con, 'flipbook');
 
@@ -17,8 +17,8 @@ $result = mysqli_query($con, $s);
 
 
 	if ($password == $password2) {
-		$sql = " UPDATE users SET password = '$password' ";
-		mysqli_query($con, $sql);
+		$sql = " UPDATE users SET password = '$password' WHERE email='$email' ";
+		$sql_res = mysqli_query($con, $sql);
 		echo "Password changed successfully!";
 		
 		header('location:login.php');

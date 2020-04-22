@@ -70,7 +70,18 @@ footer {
     padding: 3%;
     border-radius: 10px;
     margin-left:22%;
-    margin-top: 5%
+    margin-top: 5%;
+}
+
+#About-main, #ContactUs-main {
+	background: rgba(255, 255, 255, 0.95);
+    display: block;
+    width: 81%;
+    height: 28.5em;
+    padding: 3%;
+    border-radius: 10px;
+    margin-left: 6.5%;
+    margin-top: 1%;
 }
 
 #welcome {
@@ -93,7 +104,7 @@ button {
 }
 
 
-#about-index, #ContactUs-index {
+#About-index, #ContactUs-index {
 	background: rgba(255, 255, 255, 0.95);
 	margin-left: 10%;
 	margin-top: 1%;

@@ -152,7 +152,7 @@ session_start();
 		<?php
 		        if(isset($_SESSION['valid_post']) && $_SESSION['valid_post'] == true) {
 		        	echo "<p style='color:#25701d' align='center'>Book was posted successfully!</p>";
-		        	$_SESSION['valid_password'] = null;
+		        	$_SESSION['valid_post'] = null;
 		        }
 
 		?>
@@ -160,7 +160,7 @@ session_start();
 		<?php
 		        if(isset($_SESSION['valid_post']) && $_SESSION['valid_post'] == false) {
 		        	echo "<p style='color:#25701d' align='center'>Book could not be posted. Please try again.</p>";
-		        	$_SESSION['valid_password'] = null;
+		        	$_SESSION['valid_post'] = null;
 		        }
 
 		?>

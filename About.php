@@ -20,9 +20,9 @@
 			
 			<!---Searchbar--->
 			<li>
-				<form id="searchbox" action="">
-					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-					<a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
+				<form id="searchbox" action="main.php" method="post">
+					<input id="search_bar" name="search" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+					<input type="submit" value="search">
 				</form>
 			</li>
 

@@ -121,7 +121,7 @@
 						$ISBN = $details['ISBN'];
 						$price = $details['price'];
 						echo '<div class="column">
-							<img width="100px" height="120px" src="images/'.$img.'" />
+							<img style="margin-left:4em; margin-top:1em" width="100px" height="120px" src="images/'.$img.'" />
 						</div>
 						<div class="column">
 							<p><b>Title:</b>'.$bookTitle.'</p>
@@ -133,7 +133,7 @@
 							<p id="book_price" href="" style="font-size: 36px">$'.$price.'</p>
 						</div>
 						<div class="column">
-							<div class="buttons">
+							<div class="cart-buttons" style="margin-right:4em">
 							<p>
 								<form action="contactSeller.php" method="post">
 	
@@ -178,16 +178,12 @@
 					
 					$message = "";
 					$message = "Successful transaction!";
-					$output2 = "";
-					$output2 .= '<p style="font-size: 1.5em>'.$message.'</p>';
-					echo '<p style="font-size:20px">'.$message.'</p>';
+					echo '<center><p style="font-size:20px">'.$message.'</p></center>';
 				}
 				else {
 					$message = "";
 					$message = "Waiting on confirmation from seller!";
-					$output3="";
-					$output3 .= '<p style="font-size: 1.5em>'. $message.'</p>';
-					echo '<p style="font-size:20px">'.$message.'</p>';
+					echo '<center><p style="font-size:20px">'.$message.'</p></center>';
 				}
 			}
 		?>

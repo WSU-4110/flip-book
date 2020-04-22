@@ -84,7 +84,7 @@
 
 		        ?>
 						
-					<button type="submit">Sign In</button>
+					<button type="submit">Register</button>
 		</form>
 			
 

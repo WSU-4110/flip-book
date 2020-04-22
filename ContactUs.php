@@ -24,9 +24,9 @@ session_start();
 			
 			<!---Searchbar--->
 			<li>
-				<form id="searchbox" action="">
-					<input id="search_bar" type="text" placeholder=" Search by title, author, subject, or ISBN" size="70px">
-					<a href=""><i class="fa fa-search" style="font-size:100%"></i></a>
+				<form id="searchbox" action="main.php" method="post">
+					<input id="search_bar" name="search" placeholder=" Search by title, author, subject, or ISBN" size="70px">
+					<input type="submit" value="search">
 				</form>
 			</li>
 
@@ -36,7 +36,6 @@ session_start();
 			<li class="icons"><a href="profile.php"><i class="fa fa-user-circle" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="checkout.php"><i class="fa fa-shopping-cart" style="font-size:150%"></i></a></li>
 			<li class="icons"><a href="post.php"><i class="fa fa-plus" style="font-size:150%"></i></a></li>
-		
 
 		
 			<!---Menu items--->
@@ -116,14 +115,14 @@ session_start();
 			<?php
 		        if(isset($_SESSION['valid_inquiry']) && $_SESSION['valid_inquiry'] == true) {
 		        	echo "<p style='color:#25701d' align='center'>Thank you for reaching out! We will respond to you as soon as possible.</p>";
-		        	$_SESSION['valid_password'] = null;
+		        	$_SESSION['valid_inquiry'] = null;
 		        }
 			?>
 
 			<?php
 		        if(isset($_SESSION['valid_inquiry']) && $_SESSION['valid_inquiry'] == false) {
 		        	echo "<p style='color:#25701d' align='center'>Error: message could not be sent!</p>";
-		        	$_SESSION['valid_password'] = null;
+		        	$_SESSION['valid_inquiry'] = null;
 		        }
 			?>
 	</main>

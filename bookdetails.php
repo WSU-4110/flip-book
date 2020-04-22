@@ -105,7 +105,7 @@
 			$output = '';
 
 
-			$bookid = $_SESSION['bookid'];
+			$bookid = $_POST['specificBook'];
 			
 			
 			

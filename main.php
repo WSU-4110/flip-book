@@ -121,13 +121,14 @@
 
 					if($count == 0) {
 						// if no search results are found in database
-						$output .= '<h2>'.'No search results!'.'</h2>';
+						$output .= '<h1 style="color:#25701d">'.'No search results!'.'</h1>';
+						print($output);
 					}
 					else {
-						$limit = 9;
+						$limit = 4;
 						$counter = 0;
 						// returning data if search is successful
-						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
+						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 10%">';
 						while ($row = mysqli_fetch_array($query)) {
 
 
@@ -143,14 +144,19 @@
 							$img = $row['img'];
 							$_SESSION['bookid'] = $bookid;
 
-							$img_output = '<a href = "bookdetails.php"><img width="100px" height="120px" src="images/'.$img.'" /></a>';
+							$img_output = '<form action="bookdetails.php" method="post">
+											<input type="hidden" name="specificBook" value="'.$bookid.'">
+											<button style="background-color: Transparent; border:none" type="submit">
+											<img width="100px" height="120px" src="images/'.$img.'" />
+											</button>
+											</form>';
 
 							if($counter < $limit) {
 								if($counter == 0){
 									
 									echo "<tr>";
 								}
-								echo "<td>$img_output
+								echo "<td style='padding-right:10em'>$img_output
 									<br>$bookTitle
 									<br>$author
 									<br>$$price
@@ -164,7 +170,7 @@
 							else {
 								$counter = 0;
 								echo "</tr><tr>
-								<td>$img_output
+								<td style='padding-right:10em; padding-top:4em'>$img_output
 									<br>$bookTitle
 									<br>$author
 									<br>$$price
@@ -197,13 +203,14 @@
 
 					if($count == 0) {
 						// if no search results are found in database
-						$output .= '<h2>'.'No search results!'.'</h2>';
+						$output .= '<h1 style="color:#25701d">'.'No search results!'.'</h1>';
+						print($output);
 					}
 					else {
-						$limit = 9;
+						$limit = 4;
 						$counter = 0;
 						// returning data if search is successful
-						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 5%; margin-right: 5%">';
+						echo '<table style="color:black; text-align: center; font-size: 120%; margin-left: 10%">';
 						while ($row = mysqli_fetch_array($query)) {
 
 							// Assigning variables to store data
@@ -219,14 +226,19 @@
 							$price = $row['price'];
 							$img = $row['img'];
 
-							$img_output = '<a href = "bookdetails.php"><img width="100px" height="120px" src="images/'.$img.'" /></a>';
+							$img_output = '<form action="bookdetails.php" method="post">
+											<input type="hidden" name="specificBook" value="'.$bookid.'">
+											<button style="background-color: Transparent; border:none" type="submit">
+											<img width="100px" height="120px" src="images/'.$img.'" />
+											</button>
+											</form>';
 
 							if($counter < $limit) {
 								if($counter == 0){
 									
 									echo "<tr>";
 								}
-								echo "<td>$img_output
+								echo "<td style='padding-right:10em'>$img_output
 									<br>$bookTitle
 									<br>$author
 									<br>$$price
@@ -240,7 +252,7 @@
 							else {
 								$counter = 0;
 								echo "</tr><tr>
-								<td>$img_output
+								<td style='padding-right:10em; padding-top:4em'>$img_output
 									<br>$bookTitle
 									<br>$author
 									<br>$$price

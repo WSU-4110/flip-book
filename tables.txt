@@ -2,9 +2,8 @@ CREATE TABLE `flipbook`.`users` ( `email` VARCHAR(100) NOT NULL , `password` VAR
 
 
 
-
 CREATE TABLE `flipbook`.`posts` ( `bookid` INT(3) NOT NULL , `email` VARCHAR(100) NOT NULL , `bookTitle` VARCHAR(500) NOT NULL , `author` VARCHAR(100) NOT NULL , `ISBN` VARCHAR(100) NOT NULL , `edition` INT(2) NOT NULL , `subject` VARCHAR(50) NOT NULL , `classNum` VARCHAR(10) NOT NULL , `price` DOUBLE(6) NOT NULL , `img` BLOB NOT NULL , PRIMARY KEY (`bookid`)) ENGINE = MyISAM; 
 
 
 
-CREATE TABLE `flipbook`. ( `fname` VARCHAR(100) NOT NULL , `lname` VARCHAR(100) NOT NULL , `email` VARCHAR(100) NOT NULL , `comment` VARCHAR(500) NOT NULL ) ENGINE = MyISAM; 
+CREATE TABLE `flipbook`.`userinquiry` ( `fname` VARCHAR(100) NOT NULL , `lname` VARCHAR(100) NOT NULL , `email` VARCHAR(100) NOT NULL , `comment` VARCHAR(500) NOT NULL ) ENGINE = MyISAM; 

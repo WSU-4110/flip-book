@@ -71,7 +71,7 @@ aside p {
 
 .cart_item_frame {
 	margin: 3%;
-	height: 28%;
+	height: 32%;
 	border: 1px solid black;
 }
 
@@ -87,7 +87,7 @@ aside p {
   padding-top: 1%;
 }
 
-.buttons{
+.cart-buttons{
 	float:right;
 	padding-right: 5%;
 }
